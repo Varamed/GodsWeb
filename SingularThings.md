@@ -38,15 +38,6 @@ function test() {
 }
 ```
 
-align
----------------
-
-| Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
-
-
 collapsed sections
 ------------------
 <details>
