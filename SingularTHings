@@ -1,0 +1,19 @@
+# titulo 1
+## titulo 2
+### titulo 3
+
+*énfasis* (cursiva)
+_énfasis_ (cursiva)
+**énfasis fuerte** (negrita)
+__énfasis fuerte__ (negrita)
+
+Lista desordenada:
+- Elemento 1
+- Elemento 2
+  - Sub-elemento
+
+Lista ordenada:
+1. Primer elemento
+2. Segundo elemento
+
+[Texto del enlace](http://ejemplo.com)
