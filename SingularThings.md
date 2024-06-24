@@ -70,6 +70,16 @@ citas
 > Esto es una cita.
 > > Esto es una cita dentro de una cita.
 
+align
+---------------
+
+| Left-aligned | Center-aligned |
+| :---         |     :---:      |
+| cmd_get_nodes   | returns all nodes powered on     |
+| cmd_get_state   | returns the current state of the lamp       |
+
+
+
 Especificar Lenguaje 
 --------------------
 ```JavaScript
