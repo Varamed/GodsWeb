@@ -67,7 +67,8 @@ align
 | Left-aligned | Center-aligned |
 | :---         |     :---:      |
 | cmd_get_nodes   | returns all nodes powered on     |
-| cmd_get_state   | returns the current state of the nodes       |
+| cmd_get_state   | returns the current state of the lamp       |
+| cmd_init   | Start the connection with the WS.       |
 
 
 
