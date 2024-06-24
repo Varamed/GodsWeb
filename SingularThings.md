@@ -16,7 +16,8 @@ Lista desordenada:
 Lista ordenada:
 1. Primer elemento
 2. Segundo elemento
+   2.2 punto
 
-3. `Código en línea`
+4. `Código en línea`
 
 Bloque de código:
