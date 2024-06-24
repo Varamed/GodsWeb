@@ -68,6 +68,28 @@ You can add an image or a code block, too.
 Especificar Lenguaje 
 --------------------
 ```JavaScript
-function holaMundo(){
- console.log("¡Hola,mundo!")
-}
+  var cmd_get_state = {
+    command: 'get-state',
+    data: {}
+  }
+
+  var cmd_get_config = {
+    command: 'get-config',
+    data: {}
+  }
+
+  var cmd_set_config = {
+    command: 'set-config',
+    data: {}
+  }
+
+  var cmd_get_nodes = {
+    command: 'get-nodes',
+    data: {}
+  }
+
+  var cmd_get_node = {
+    command: 'get-node',
+    data: {}
+  }
+
