@@ -334,55 +334,55 @@ Configuración de red.
 
 - mesh_channel: Canal de malla.
 
-- mesh_channel_switch:  Interruptor de cambio de canal de malla.
+- mesh_channel_switch: Interruptor de cambio de canal de malla.
 
 - mesh_config: Valores detallados en la configuración de malla
 
-    - assoc_expire_ms: Association expiration time.
+    - assoc_expire_ms: Tiempo de expiración de asociación.
     
-    - attempt_count: Number of connection attempts.
+    - attempt_count: Número de intentos de conexión.
     
-    - backoff_rssi: Backoff RSSI value.
+    - backoff_rssi: Valor de RSSI de retroceso.
     
-    - beacon_interval_ms: Beacon interval.
+    - beacon_interval_ms: ntervalo de baliza.
     
-    - capacity_num: Capacity number.
+    - capacity_num: Número de capacidad.
     
-    - cnx_rssi: Connection RSSI value.
+    - cnx_rssi: Valor de RSSI de conexión.
     
-    - data_drop_enable: Data drop enable flag.
+    - data_drop_enable: Indicador de habilitación de descarte de datos.
     
-    - max_connection: Maximum number of connections.
+    - max_connection: Número máximo de conexiones.
     
-    - max_layer: Maximum network layer.
+    - max_layer: Máxima capa de red.
     
-    - max_layer_deprecated: Deprecated maximum network layer.
+    - max_layer_deprecated: Capa máxima de red (obsoleta).
     
-    - monitor_duration_ms: Monitor duration.
+    - monitor_duration_ms: Duración de monitoreo.
     
-    - monitor_ie_count: Monitor IE count.
+    - monitor_ie_count: Cantidad de elementos de información de monitoreo.
     
-    - passive_scan_ms: Passive scan duration.
+    - passive_scan_ms: Duración de escaneo pasivo.
     
-    - retransmit_enable: Retransmit enable flag.
+    - retransmit_enable: Indicador de habilitación de retransmisión.
     
-    - root_conflicts_enable: Root conflicts enable flag.
+    - root_conflicts_enable: Indicador de habilitación de conflictos de raíz.
     
-    - root_healing_ms: Root healing duration.
+    - root_healing_ms: Duración de recuperación de raíz.
     
-    - scan_min_count: Minimum scan count.
+    - scan_min_count: Cantidad mínima de escaneos.
     
-    - select_rssi: Select RSSI value.
+    - select_rssi: Valor de RSSI de selección.
     
-    - switch_rssi: Switch RSSI value.
+    - switch_rssi: Valor de RSSI de cambio.
     
-    - topology: Network topology.
+    - topology: Topología de red.
     
-    - vote_max_count: Maximum vote count.
+    - vote_max_count: Número máximo de votos.
     
-    - vote_percentage: Vote percentage.
+    - vote_percentage: Porcentaje de votos.
     
-    - xon_qsize: XON queue size.
+    - xon_qsize: Tamaño de la cola XON.
 
 - mesh_id: ID de la malla.
 
@@ -431,183 +431,190 @@ Configuración de red.
 - version:Versión de la configuración de red.
 
 ### Device
-The Device section provides information about the hardware and software of the device.
+La sección de Device proporciona información sobre el hardware y software del dispositivo.
 
-- api_version: API version.
+- api_version: Versión de la API.
 
-- atecc_serial_str: Serial string for ATECC chip.
+- atecc_serial_str: Cadena serial para el chip ATECC.
 
-- chip_cores: Number of chip cores.
+- chip_cores: Número de núcleos del chip.
 
-- chip_features: Chip features.
+- chip_features: Características del chip.
 
-- chip_id: Chip identifier.
+- chip_id: Identificador del chip.
 
-- chip_revision: Chip revision.
+- chip_revision: Revisión del chip.
 
-- device_id: Device identifier.
+- device_id: Identificador del dispositivo.
 
-- factory_datetime: Factory date and time.
+- factory_datetime: Fecha y hora de fabricación.
 
-- factory_registered: Factory registered flag.
+- factory_registered: Indicador de registro en fábrica.
 
-- firmware_version: Firmware version.
+- firmware_version: Versión del firmware.
 
-- idf_datetime: IDF date and time.
+- idf_datetime: Fecha y hora del IDF.
 
-- idf_version: IDF version.
+- idf_version: Versión del IDF.
 
-- model: Device model.
+- model: Modelo del dispositivo.
 
-- name: Device name.
+- name: Nombre del dispositivo.
 
-- serial_number: Device Serial number.
+- serial_number: Número de serie del dispositivo.
 
-- token: Device token.
+- token: Token del dispositivo.
 
-- mac_address: Device MAC adress.
+- mac_address: Dirección MAC del dispositivo.
 
 
 ### State
-The State section provides real-time information about the device's operational status, including network status and sensor readings.
+La sección de State proporciona información en tiempo real sobre el estado operativo del dispositivo, incluido el estado de la red y las lecturas de sensores.
 
 #### Mesh
-- mesh_childs: Number of mesh children.
+- mesh_childs: Número de hijos en la malla.
 
-- mesh_childs_total: Total number of mesh children.
+- mesh_childs_total: Número total de hijos en la malla.
 
-- mesh_connected: Mesh connected status.
+- mesh_connected: Estado de conexión de la malla.
 
-- mesh_init: Mesh initialization status.
+- mesh_init: Estado de inicialización de la malla.
 
-- mesh_layer: Mesh network layer.
+- mesh_layer: Capa de red de la malla.
 
-- mesh_mac: Mesh MAC address.
+- mesh_mac: Dirección MAC de la malla.
 
-- mesh_parent_rssi: Mesh parent RSSI value.
+- mesh_parent_rssi: Valor de RSSI del padre de la malla.
 
-- parent_addr: Parent address.
+- parent_addr: Dirección del padre.
 
-- root_addr: Root address.
+- root_addr: Dirección de la raíz.
 
 #### Sensors
-- accel: Accelerometer data.
+##### accel
+Datos del acelerómetro.
 
-    - error: Error flag.
+- error: Indicador de error.
     
-    - x: X-axis value.
+- x: Valor del eje X.
     
-    - y: Y-axis value.
+- y: Valor del eje Y.
     
-    - z: Z-axis value.
+- z: Valor del eje Z.
 
-- ambient: Ambient sensor data.
+##### ambient
+Datos del sensor ambiental.
 
-    - air_quality: Air quality.
+- air_quality: Calidad del aire.
     
-    - altitude: Altitude.
+- altitude: Altitud.
     
-    - error: Error flag.
+- error: Indicador de error.
     
-    - humidity: Humidity.
+- humidity: Humedad.
     
-    - pressure: Pressure.
+- pressure: Presión.
     
-    - temperature: Temperature.
+- temperature: Temperatura.
 
-- battery: Battery status.
+##### battery
+Estado de la batería.
 
-    - adc_imon: ADC current monitoring.
-    
-    - capacity: Battery capacity .
-    
-    - charge_current: Charge current.
-    
-    - error: Error flag.
-    
-    - input_charge: Input charge.
-    
-    - input_current_limit: Input current limit.
-    
-    - input_voltage: Input voltage.
-    
-    - is_powered: Power status.
-    
-    - junction_temperature: Junction temperature.
-    
-    - status0: Status register 0.
-    
-    - status1: Status register 1.
-    
-    - system_voltage: System voltage.
-    
-    - total_cells: Total number of cells.
-    
-    - voltage_per_cell: Voltage per cell.
+- adc_imon: Monitoreo actual del ADC.
 
-- compass: Compass data.
+- capacity: Capacidad de la batería.
 
-    - error: Error flag.
-    
-    - x: X-axis value.
-    
-    - y: Y-axis value.
-    
-    - z: Z-axis value.
+- charge_current: Corriente de carga.
 
-- gps: GPS data.
-    
-    - altitude: Altitude.
-    
-    - error: Error flag.
+- error: Indicador de error.
 
-    - latitude: Latitude.
-      
-    - longitude: Longitude.
+- input_charge: Carga de entrada.
 
-- gyros: Gyroscope data.
-    
-    - error: Error flag.
-    
-    - x: X-axis value.
-    
-    - y: Y-axis value.
-    
-    - z: Z-axis value.
+- input_current_limit: Límite de corriente de entrada.
 
-- lux_color: Light color sensor data.
-    
-    - b: Blue component.
-    
-    - error: Error flag.
-    
-    - g: Green component.
-    
-    - r: Red component.
-    
-    - w: White component.
+- input_voltage: Voltaje de entrada.
 
-- noise: Noise sensor data.
+- is_powered: Estado de alimentación.
+
+- junction_temperature: Temperatura de la unión.
+
+- status0: Registro de estado 0.
+
+- status1: Registro de estado 1.
+
+- system_voltage: Voltaje del sistema.
+
+- total_cells: Número total de celdas.
+
+- voltage_per_cell: Voltaje por celda.
+
+##### compass
+Datos del sensor de brújula.
+
+- error: Indicador de error.
+
+- x: Valor del eje X.
+
+- y: Valor del eje Y.
+
+- z: Valor del eje Z.
+
+##### gps
+Datos del GPS.
     
-    - db: Noise level in decibels.
+-altitude: Altitud.
+
+-error: Indicador de error.
+
+-latitude: Latitud.
+
+-longitude: Longitud.
+
+##### gyros: Datos del giroscopio.
     
-    - error: Error flag.
+- error: Indicador de error.
+
+- x: Valor del eje X.
+
+- y: Valor del eje Y.
+
+- z: Valor del eje Z.
+
+##### lux_color
+Datos del sensor de color de luz.
     
-    - mv: Millivolt value.
+- b: Componente azul.
+
+- error: Indicador de error.
+
+- g: Componente verde.
+
+- r: Componente rojo.
+
+- w: Componente blanco.
+
+##### noise
+Datos del sensor de ruido.
     
-    - raw: Raw sensor value.
+- db: Nivel de ruido en decibelios.
+  
+- error: Indicador de error.
 
-- total_errors: Total number of errors.
+- mv: Valor en milivoltios.
 
-- total_reads: Total number of reads.
+- raw: Valor crudo del sensor.
 
-- total_sents: Total number of sends.
+- total_errors: Número total de errores.
 
-- total_stores: Total number of stores.
+- total_reads: Número total de lecturas.
 
-- total_time: Total operational time.
+- total_sents: Número total de envíos.
 
-- unixtime: Unix time.
+- total_stores: Número total de almacenamientos.
+
+- total_time: Tiempo total de funcionamiento.
+
+- unixtime: Tiempo Unix.
 
 ## get-node
 El comando get-node se utiliza para obtener información detallada sobre un nodo específico en la red mediante su dirección MAC única. Este comando es fundamental para recopilar datos exhaustivos sobre un dispositivo IoT particular, incluyendo detalles como el ID del dispositivo, número de serie (si está disponible), configuración de red específica, estado operativo actual (como su capa en una red de malla), y otros parámetros relevantes.
