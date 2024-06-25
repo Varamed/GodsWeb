@@ -6,8 +6,8 @@ This document provides an overview of the configuration and state structure for 
 WebSocket Application Configuration and State Overview
 This document provides an overview of the configuration and state structure for a WebSocket-based application. The configurations and states are organized into categories such as config, intervals, light, location, network, device, and state. Each category contains various parameters that define the settings and operational status of the application.
 
-## Configuration (config)
-### DateTime
+### Configuration (config)
+#### DateTime
 The DateTime configuration handles settings related to date and time, including synchronization with an SNTP server.
 - save: A boolean indicating if the settings should be saved.
 - sntp_server: The address of the SNTP server.
@@ -16,7 +16,7 @@ The DateTime configuration handles settings related to date and time, including 
 - timezone: The timezone setting.
 - updated: A boolean indicating if the configuration has been updated.
 
-### Intervals
+#### Intervals
 This section defines various time intervals for reading, sending, and storing data.
 
 - read: Interval for reading data.
@@ -25,7 +25,7 @@ This section defines various time intervals for reading, sending, and storing da
 - store: Interval for storing data.
 - updated: A boolean indicating if the configuration has been updated.
 
-### Light
+#### Light
 The Light configuration deals with the settings for light operations, such as blinking and color settings.
 
 - blink_color: Defines the color for the blinking light.
@@ -48,7 +48,7 @@ The Light configuration deals with the settings for light operations, such as bl
 - save: A boolean indicating if the settings should be saved.
 - updated: A boolean indicating if the configuration has been updated.
 
-### Location
+#### Location
 The Location configuration includes settings for location identification and GPS position.
 
 - category_id: Category identifier.
@@ -65,7 +65,7 @@ The Location configuration includes settings for location identification and GPS
 - updated: A boolean indicating if the configuration has been updated.
 
 
-### Network
+#### Network
 The Network configuration includes settings related to network operations, including mesh network settings and WiFi configurations.
 
 - mesh_authmode: Mesh network authentication mode.
@@ -119,7 +119,7 @@ The Network configuration includes settings related to network operations, inclu
 -update:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 -version:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-## Device
+### Device
 The Device section provides information about the hardware and software of the device.
 
 - api_version: API version.
@@ -140,10 +140,10 @@ The Device section provides information about the hardware and software of the d
 - token: Device token.
 - mac_address: Device MAC adress.
 
-## State
+### State
 The State section provides real-time information about the device's operational status, including network status and sensor readings.
 
-### Mesh
+#### Mesh
 - mesh_childs: Number of mesh children.
 - mesh_childs_total: Total number of mesh children.
 - mesh_connected: Mesh connected status.
@@ -154,7 +154,7 @@ The State section provides real-time information about the device's operational 
 - parent_addr: Parent address.
 - root_addr: Root address.
 
-### Sensors
+#### Sensors
 - accel: Accelerometer data.
     - error: Error flag.
     - x: X-axis value.
