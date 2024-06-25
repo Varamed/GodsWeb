@@ -16,3 +16,11 @@ The DateTime configuration handles settings related to date and time, including 
 - timezone: The timezone setting ("CET-1CEST,M3.5.0,M10.5.0/3").
 - updated: A boolean indicating if the configuration has been updated (true).
 
+### Intervals
+This section defines various time intervals for reading, sending, and storing data.
+
+- read: Interval for reading data (5000 milliseconds).
+- save: A boolean indicating if the settings should be saved (true).
+- send: Interval for sending data (30000 milliseconds).
+- store: Interval for storing data (60000 milliseconds).
+- updated: A boolean indicating if the configuration has been updated (true).
