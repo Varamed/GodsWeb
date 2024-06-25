@@ -840,42 +840,188 @@ var cmd_get_node = {
 }
 ```
 ### mac_address
-Dirección MAC única del dispositivo.
-
+Es la dirección MAC del dispositivo.
 ### device
-Detalles del dispositivo en sí.
+contiene información detallada sobre un dispositivo específico.
 
-- device_id: Identificador del dispositivo (valor entero).
-- serial_number: Número de serie del dispositivo (cadena vacía en este caso).
-- model: Modelo del dispositivo ("ST-INE-002-004").
-- name: Nombre del dispositivo ("ST-INE-002-004").
-- token: Token de autenticación (cadena vacía).
-- atecc_serial_str: No especificado en este caso.
-- firmware_version: Versión del firmware ("1.0.2").
-- idf_version: Versión del IDF (Framework de IoT de Espressif) ("v5.2.2-185-g018409d99b").
-- idf_datetime: Fecha y hora del IDF ("Jun 25 2024 - 09:42:41").
-- api_version: Versión de la API (valor entero, 12596).
-- chip_id, chip_features, chip_revision, chip_cores: Detalles específicos del chip.
-- factory_registered, factory_datetime: Estado de registro en fábrica y fecha.
-
+- device_id:Un identificador único para el dispositivo.
+- serial_number: El número de serie del dispositivo.
+- model: El modelo del dispositivo.
+- name: El nombre del dispositivo, que en este caso es el mismo que el modelo.
+- token: Un token de seguridad para autenticar el dispositivo.
+- atecc_serial_str: El número de serie del chip ATECC (un chip de seguridad).
+- firmware_version: La versión del firmware instalado en el dispositivo.
+- idf_version: La versión del ESP-IDF (Espressif IoT Development Framework) utilizada.
+- idf_datetime: La fecha y hora de compilación del ESP-IDF.
+- api_version: La versión de la API utilizada por el dispositivo.
+- chip_id: Un identificador del chip utilizado en el dispositivo.
+- chip_features: Las características del chip, representadas en un valor numérico.
+- chip_revision: La revisión del chip.
+- chip_cores: El número de núcleos del chip.
+- factory_registered: Indica si el dispositivo ha sido registrado en la fábrica.
+- factory_datetime: La fecha y hora de registro en la fábrica.
 ### config
-Configuración del dispositivo.
-
-- version: Versión de la configuración (valor entero, 1).
-- updated, save: Indicadores de actualización y guardado.
-- datetime: Configuración de fecha y hora.
-- location: Configuración de ubicación.
-- network: Configuración de red (incluye configuraciones de Wi-Fi y malla).
-- light: Configuración de luz.
-- intervals: Intervalos de lectura, almacenamiento y envío.
-
-###state
-Estado actual del dispositivo.
-- mesh: Estado de la malla (conectividad, direcciones MAC, etc.).
-- sensors: Estado de los sensores del dispositivo (datos como temperatura, humedad, batería, etc.).
-
+- version: La versión de la configuración del dispositivo.
+- updated: Indica si la configuración ha sido actualizada recientemente.
+- save: Indica si la configuración debe ser guardada.
+- datetime: Configuración relacionada con la fecha y hora del dispositivo.
+    - updated: Indica si la configuración de fecha y hora ha sido actualizada recientemente.
+    - save: Indica si la configuración de fecha y hora debe ser guardada.
+    - sync_to_unixtime: El tiempo UNIX al cual sincronizar.
+    - timezone: La zona horaria del dispositivo.
+    - sync_with_sntp: Indica si debe sincronizarse con un servidor SNTP.
+    - sntp_server: El servidor SNTP para la sincronización de la hora.
+ 
+### location
+- updated: Indica si la configuración de ubicación ha sido actualizada recientemente.
+- save: Indica si la configuración de ubicación debe ser guardada.
+- category_id: El ID de la categoría de ubicación.
+- group_id: El ID del grupo de ubicación.
+- family_id: El ID de la familia de ubicación.
+- location_id: El ID de la ubicación específica.
+- location_name: El nombre de la ubicación.
+    - gps_position: : Contiene información de la posición GPS.
+    - error: Indica si hay un error en la posición GPS.
+    - latitude: La latitud de la ubicación.
+    - longitude: La longitud de la ubicación.
+    - altitude: La altitud de la ubicación.
 
 ## init
+"init" es el primer comando o mensaje enviado por un cliente WebSocket para iniciar la conexión con un servidor WebSocket, facilitando así la comunicación bidireccional en tiempo real entre ambos extremos.
+```javascript
+var cmd_init = {
+    command: 'init',
+    data: {
+      protocol: 1,
+      security_token: ''
+    }
+  }
+```
+```json
+{
+  "device": {
+    "device_id": 114,
+    "serial_number": "0450-D0B7-7017-DC22",
+    "model": "ST-INE-003-002",
+    "name": "Visualfy Bridge",
+    "token": "1c62ef10f4a492b8638c5169359b54aa95984296c2b2149cb7b18441d1352fab",
+    "atecc_serial_str": "",
+    "firmware_version": "1.0.4",
+    "idf_version": "v5.2.2-185-g018409d99b",
+    "idf_datetime": "",
+    "api_version": 1,
+    "chip_id": 1,
+    "chip_features": 50,
+    "chip_revision": 301,
+    "chip_cores": 2,
+    "factory_registered": true,
+    "factory_datetime": "2024-05-09 18:12:12"
+  },
+  "config": {
+    "test_mode": "TEST_MODE_NONE",
+    "datetime": {
+      "save": true,
+      "sync_to_unixtime": 1719314785,
+      "timezone": "CET-1CEST,M3.5.0,M10.5.0/3",
+      "sync_with_sntp": true,
+      "sntp_server": "pool.ntp.org",
+      "unixtime": 1719317151,
+      "datetime": "2024-06-25 14:05:51"
+    },
+    "location": {
+      "save": false,
+      "category_id": 0,
+      "group_id": 0,
+      "family_id": 0,
+      "location_id": 0,
+      "gps_position": {
+        "error": false,
+        "latitude": 0,
+        "longitude": 0,
+        "altitude": 0
+      }
+    },
+    "network": {
+      "save": true,
+      "ping_interval": 15000,
+      "ping_threshold": 3,
+      "wifi_ap_ssid": "BridgeAP",
+      "wifi_ap_pass": "password",
+      "wifi_ap_authmode": 6,
+      "wifi_ap_channel": 11,
+      "wifi_sta_ssid": "TP-Link_C49C",
+      "wifi_sta_pass": "8165044699",
+      "wifi_sta_authmode": 6,
+      "wifi_sta_channel": 11,
+      "mesh_id": "999999",
+      "mesh_pass": "password",
+      "mesh_authmode": 6,
+      "mesh_channel": 11,
+      "mesh_channel_switch": 0,
+      "mesh_router_switch": 0,
+      "mesh_root_type": 1,
+      "mesh_node_type": 2
+    },
+    "intervals_bridge": {
+      "save": true,
+      "read": 5000,
+      "store": 60000,
+      "send": 5000
+    },
+    "intervals_node": {
+      "save": true,
+      "read": 5000,
+      "store": 60000,
+      "send": 30000
+    },
+    "server": {
+      "https_active": false,
+      "task_stack_size": 24576,
+      "task_priority": 18,
+      "task_core_id": 1,
+      "recv_wait_timeout": 2000,
+      "send_wait_timeout": 2000
+    }
+  },
+  "state": {
+    "current_millis": 0,
+    "last_millis": 0,
+    "unixtime": 0,
+    "unixtime_synced": false,
+    "is_gpio_init": true,
+    "is_i2c_init": false,
+    "is_spi_init": false,
+    "is_nvs_init": true,
+    "is_lfs_pub_init": true,
+    "is_lfs_prv_init": true,
+    "is_tcpip_init": true,
+    "is_netbios_init": true,
+    "is_mdns_init": true,
+    "is_sntp_init": true,
+    "is_ws_started": true,
+    "is_ws_https": false,
+    "eth_init": true,
+    "eth_connected": true,
+    "eth_clients": 0,
+    "eth_mac": "30:c9:22:9b:c7:e3",
+    "eth_state": 0,
+    "eth_has_internet": false,
+    "wifi_sta_init": true,
+    "wifi_sta_connected": false,
+    "wifi_sta_retry_num": 0,
+    "wifi_sta_clients": 0,
+    "wifi_sta_mac": "30:c9:22:9b:c7:e0",
+    "wifi_sta_state": 0,
+    "wifi_ap_init": false,
+    "wifi_ap_connected": false,
+    "wifi_ap_countdown": 0,
+    "wifi_ap_clients": 0,
+    "wifi_ap_mac": "30:c9:22:9b:c7:e1",
+    "wifi_ap_state": 0,
+    "bt_mac": "30:c9:22:9b:c7:e2"
+  }
+}
+```
 
   
 
