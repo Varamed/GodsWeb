@@ -618,6 +618,7 @@ Datos del sensor de ruido.
 
 ## get-node
 El comando `get-node` se utiliza para obtener información detallada sobre un nodo específico en la red mediante su dirección MAC única. Este comando es fundamental para recopilar datos exhaustivos sobre un dispositivo IoT particular, incluyendo detalles como el ID del dispositivo, número de serie (si está disponible), configuración de red específica, estado operativo actual (como su capa en una red de malla), y otros parámetros relevantes.
+
 **command y data**
 ```javascript
 var cmd_get_node = {
@@ -1077,6 +1078,7 @@ Datos recogidos por varios sensores del dispositivo.
 
 ## init
 `init` es el primer comando o mensaje enviado por un cliente WebSocket para iniciar la conexión con un servidor WebSocket, facilitando así la comunicación bidireccional en tiempo real entre ambos extremos.
+
 **command y data**
 ```javascript
 var cmd_init = {
