@@ -614,3 +614,9 @@ The State section provides real-time information about the device's operational 
 
 - unixtime: Unix time.
 
+  ## get-node
+  
+  ## init
+
+  
+
