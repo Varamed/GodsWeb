@@ -1,102 +1,18 @@
-Títulos
--------
-# Título 1
-## Título 2
-### Título 3
+#WebSocket lamp connection
 
-Texto especial
---------------
-*énfasis* (cursiva)
-_énfasis_ (cursiva)
-**énfasis fuerte** (negrita)
-__énfasis fuerte__ (negrita)
-
-Lista desordenada
------------------
-- Elemento 1
-- Elemento 2
-  - Sub-elemento
-
-Lista ordenada
---------------
-1. Primer elemento
-2. Segundo elemento
-
-enlace
-------
-[Texto del enlace](http://ejemplo.com)
-
-Código en línea
----------------
-`Código en línea`
-
-bloque de código
-----------------
-```
-function test() {
-  console.log("notice the blank line before this function?");
-}
-```
-
-collapsed sections
-------------------
-<details>
-
-<summary>Tips for collapsed sections</summary>
-
-### You can add a header
-
-You can add text within a collapsed section. 
-
-You can add an image or a code block, too.
-
-```ruby
-   puts "Hello World"
-```
-
-</details>
-
-citas
-------------------
-> Esto es una cita.
-> > Esto es una cita dentro de una cita.
-
-align
----------------
-
-| Left-aligned | Center-aligned |
-| :---         |     :---:      |
-| cmd_get_nodes   | returns all nodes powered on     |
-| cmd_get_state   | returns the current state of the lamp       |
-| cmd_init   | Start the connection with the WS.       |
+This document provides an overview of the configuration and state structure for a WebSocket-based application. The configurations and states are organized into categories such as config, intervals, light, location, network, device, and state. Each category contains various parameters that define the settings and operational status of the application.
 
 
+WebSocket Application Configuration and State Overview
+This document provides an overview of the configuration and state structure for a WebSocket-based application. The configurations and states are organized into categories such as config, intervals, light, location, network, device, and state. Each category contains various parameters that define the settings and operational status of the application.
 
-Especificar Lenguaje 
---------------------
-```JavaScript
-  var cmd_get_state = {
-    command: 'get-state',
-    data: {}
-  }
-
-  var cmd_get_config = {
-    command: 'get-config',
-    data: {}
-  }
-
-  var cmd_set_config = {
-    command: 'set-config',
-    data: {}
-  }
-
-  var cmd_get_nodes = {
-    command: 'get-nodes',
-    data: {}
-  }
-
-  var cmd_get_node = {
-    command: 'get-node',
-    data: {}
-  }
+##Configuration (config)
+###DateTime
+The DateTime configuration handles settings related to date and time, including synchronization with an SNTP server.
+-save: A boolean indicating if the settings should be saved (true).
+-sntp_server: The address of the SNTP server ("pool.ntp.org").
+-sync_to_unixtime: Indicates whether to sync to Unix time (0).
+-sync_with_sntp: A boolean indicating whether to sync with the SNTP server (false).
+-timezone: The timezone setting ("CET-1CEST,M3.5.0,M10.5.0/3").
+-updated: A boolean indicating if the configuration has been updated (true).
 
