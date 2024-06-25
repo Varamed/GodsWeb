@@ -1,10 +1,238 @@
-# WebSocket lamp connection
+# WebSocket node connection
 
 This document provides an overview of the configuration and state structure for a WebSocket-based application. The configurations and states are organized into categories such as config, intervals, light, location, network, device, and state. Each category contains various parameters that define the settings and operational status of the application.
 
 
 WebSocket Application Configuration and State Overview
 This document provides an overview of the configuration and state structure for a WebSocket-based application. The configurations and states are organized into categories such as config, intervals, light, location, network, device, and state. Each category contains various parameters that define the settings and operational status of the application.
+
+## get-node
+
+The `get-nodes` command is used to request the list of all currently powered nodes in the network. This command is essential for network administrators to get an overview of active devices and their statuses. When this command is sent, the server responds with details about each powered node, including their configuration and state.
+
+```javascript
+var cmd_get_nodes = {
+    command: 'get-nodes',
+    data: {}
+  }
+```
+
+```json
+[
+{
+  "config": {
+    "datetime": {
+      "save": true,
+      "sntp_server": "pool.ntp.org",
+      "sync_to_unixtime": 0,
+      "sync_with_sntp": false,
+      "timezone": "CET-1CEST,M3.5.0,M10.5.0/3",
+      "updated": true
+    },
+    "intervals": {
+      "read": 5000,
+      "save": true,
+      "send": 30000,
+      "store": 60000,
+      "updated": true
+    },
+    "light": {
+      "blink_color": {
+        "blink_color_error": false,
+        "blink_color_r": 255,
+        "blink_color_g": 255,
+        "blink_color_b": 255,
+        "blink_color_w": 255
+      },
+      "blink_duration": 500,
+      "blink_time": 500,
+      "blink_type": 0,
+      "color": {
+        "error": false,
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "w": 255
+      },
+      "mode": 0,
+      "restart_mode": 1,
+      "save": true,
+      "updated": false
+    },
+    "location": {
+      "category_id": 0,
+      "family_id": 0,
+      "gps_position": {
+        "altitude": 0,
+        "error": false,
+        "latitude": 0,
+        "longitude": 0
+      },
+      "group_id": 0,
+      "location_id": 0,
+      "location_name": "",
+      "save": true,
+      "updated": false
+    },
+    "network": {
+      "mesh_authmode": 6,
+      "mesh_channel": 11,
+      "mesh_channel_switch": 0,
+      "mesh_config": {
+        "assoc_expire_ms": 30000,
+        "attempt_count": 30,
+        "backoff_rssi": -98,
+        "beacon_interval_ms": 100,
+        "capacity_num": 100,
+        "cnx_rssi": -118,
+        "data_drop_enable": true,
+        "max_connection": 6,
+        "max_layer": 101,
+        "max_layer_deprecated": 0,
+        "monitor_duration_ms": 30000,
+        "monitor_ie_count": 10,
+        "passive_scan_ms": 300,
+        "retransmit_enable": true,
+        "root_conflicts_enable": false,
+        "root_healing_ms": 6000,
+        "scan_min_count": 10,
+        "select_rssi": -78,
+        "switch_rssi": -98,
+        "topology": 1,
+        "vote_max_count": 15,
+        "vote_percentage": 90,
+        "xon_qsize": 64
+      },
+      "mesh_id": "999988",
+      "mesh_node_type": 2,
+      "mesh_pass": "password",
+      "mesh_root_type": 1,
+      "mesh_router_switch": 0,
+      "mesh_updated": false,
+      "ping_interval": 15000,
+      "ping_threshold": 3,
+      "save": true,
+      "updated": true,
+      "wifi_ap_authmode": 6,
+      "wifi_ap_channel": 11,
+      "wifi_ap_pass": "password",
+      "wifi_ap_ssid": "BridgeAP",
+      "wifi_ap_updated": false,
+      "wifi_sta_authmode": 6,
+      "wifi_sta_channel": 11,
+      "wifi_sta_pass": "8165044699",
+      "wifi_sta_ssid": "TP-Link_C49C",
+      "wifi_sta_updated": false,
+      "save": true,
+      "updated": true,
+      "version": 1
+    },
+    "device": {
+      "api_version": 14132,
+      "atecc_serial_str": "",
+      "chip_cores": 1,
+      "chip_features": 82,
+      "chip_id": 13,
+      "chip_revision": 0,
+      "device_id": 0,
+      "factory_datetime": "",
+      "factory_registered": false,
+      "firmware_version": "1.0.2",
+      "idf_datetime": "Jun 21 2024 - 09:35:47",
+      "idf_version": "v5.2.2-172-gb63fd4eaee",
+      "model": "ST-INE-002-004",
+      "name": "ST-INE-002-004",
+      "serial_number": "",
+      "token": "",
+      "mac_address": "40:4c:ca:45:1e:08"
+    },
+    "state": {
+      "mesh": {
+        "mesh_childs": 0,
+        "mesh_childs_total": 0,
+        "mesh_connected": true,
+        "mesh_init": true,
+        "mesh_layer": 2,
+        "mesh_mac": "39:39:39:39:38:38",
+        "mesh_parent_rssi": -77,
+        "parent_addr": "00:00:00:6c:f3:85",
+        "root_addr": "90:38:0c:ac:5f:0d"
+      }
+    },
+    "sensors": {
+      "accel": {
+        "error": false,
+        "x": -0.0328180007636547,
+        "y": -0.17470400035381317,
+        "z": 0.9808800220489502
+      },
+      "ambient": {
+        "air_quality": 0,
+        "altitude": 0,
+        "error": false,
+        "humidity": 0,
+        "pressure": 0,
+        "temperature": 0
+      },
+      "battery": {
+        "adc_imon": 11,
+        "capacity": 0,
+        "charge_current": 0,
+        "error": false,
+        "input_charge": 106.25,
+        "input_current_limit": 800,
+        "input_voltage": 11960,
+        "is_powered": true,
+        "junction_temperature": 45.38869857788086,
+        "status0": 27136,
+        "status1": 32,
+        "system_voltage": 8360,
+        "total_cells": 2,
+        "voltage_per_cell": 3595
+      },
+      "compass": {
+        "error": false,
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "gps": {
+        "altitude": 0,
+        "error": false,
+        "latitude": 0,
+        "longitude": 0
+      },
+      "gyros": {
+        "error": false,
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "lux_color": {
+        "b": 255,
+        "error": false,
+        "g": 255,
+        "r": 255,
+        "w": 255
+      },
+      "noise": {
+        "db": 0,
+        "error": false,
+        "mv": 0,
+        "raw": 0
+      }
+    },
+    "total_errors": 2,
+    "total_reads": 0,
+    "total_sents": 0,
+    "total_stores": 0,
+    "total_time": 12,
+    "unixtime": 94173
+  }
+}
+]
+```
+
 
 ### Configuration (config)
 #### DateTime
