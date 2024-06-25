@@ -6,9 +6,11 @@ This document provides an overview of the configuration and state structure for 
 WebSocket Application Configuration and State Overview
 This document provides an overview of the configuration and state structure for a WebSocket-based application. The configurations and states are organized into categories such as config, intervals, light, location, network, device, and state. Each category contains various parameters that define the settings and operational status of the application.
 
-## get-node
+## get-nodes
 
 The `get-nodes` command is used to request the list of all currently powered nodes in the network. This command is essential for network administrators to get an overview of active devices and their statuses. When this command is sent, the server responds with details about each powered node, including their configuration and state.
+
+**Command object structured**
 
 ```javascript
 var cmd_get_nodes = {
@@ -16,7 +18,7 @@ var cmd_get_nodes = {
     data: {}
   }
 ```
-
+**Response JSON**
 ```json
 [
 {
