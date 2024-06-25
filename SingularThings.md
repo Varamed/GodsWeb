@@ -999,59 +999,73 @@ Datos recogidos por varios sensores del dispositivo.
 - total_reads: Número total de lecturas realizadas por los sensores.
 - total_stores: Número total de almacenamientos realizados por los sensores.
 - total_sents: Número total de envíos realizados por los sensores.
-- battery
-    - error: Indica si hay un error en los datos de la batería.
-    - is_powered: Indica si el dispositivo está alimentado.
-    - total_cells: Número total de celdas de la batería.
-    - input_voltage: Voltaje de entrada en milivoltios.
-    - input_charge: Carga de entrada en amperios-hora.
-    - system_voltage: Voltaje del sistema en milivoltios.
-    - input_current_limit: Límite de corriente de entrada en amperios.
-    - voltage_per_cell: Voltaje por celda en milivoltios.
-    - charge_current: Corriente de carga en amperios.
-    - juntion_temperature: Temperatura de la unión en grados Celsius.
-    - status0: Estado de la batería (0).
-    - status1: Estado de la batería (1).
-    - adc_imon: Corriente medida por el ADC.
-    - capacity: Capacidad de la batería.
-- ambient
-    - error: Indica si hay un error en los datos ambientales.
-    - temperature: Temperatura ambiente en grados Celsius.
-    - humidity: Humedad ambiente en porcentaje.
-    - pressure: Presión atmosférica en Pascales.
-    - altitude: Altitud en metros sobre el nivel del mar.
-    - air_quality: Calidad del aire.
-- lux_color
-    - error: Indica si hay un error en los datos de luz y color.
-    - r: Valor de rojo en la configuración del color.
-    - g: Valor de verde en la configuración del color.
-    - b: Valor de azul en la configuración del color.
-    - w: Valor de blanco en la configuración del color.
-- noise
-    - error: Indica si hay un error en los datos de ruido.
-    - raw: Valor crudo del ruido.
-    - mv: Valor en milivoltios del ruido.
-    - db: Nivel de decibelios del ruido.
-- accel
-    - error: Indica si hay un error en los datos del acelerómetro.
-    - x: Aceleración en el eje X.
-    - y: Aceleración en el eje Y.
-    - z: Aceleración en el eje Z.
-- gyros
-    - error: Indica si hay un error en los datos del giroscopio.
-    - x: Velocidad angular en el eje X.
-    - y: Velocidad angular en el eje Y.
-    - z: Velocidad angular en el eje Z.
-- compass
-    - error: Indica si hay un error en los datos del magnetómetro.
-    - x: Valor del campo magnético en el eje X.
-    - y: Valor del campo magnético en el eje Y.
-    - z: Valor del campo magnético en el eje Z.
-- gps
-    - error: Indica si hay un error en los datos del GPS.
-    - latitude: Latitud geográfica.
-    - longitude: Longitud geográfica.
-    - altitude: Altitud sobre el nivel del mar.
+#### battery
+- error: Indica si hay un error en los datos de la batería.
+- is_powered: Indica si el dispositivo está alimentado.
+- total_cells: Número total de celdas de la batería.
+- input_voltage: Voltaje de entrada en milivoltios.
+- input_charge: Carga de entrada en amperios-hora.
+- system_voltage: Voltaje del sistema en milivoltios.
+- input_current_limit: Límite de corriente de entrada en amperios.
+- voltage_per_cell: Voltaje por celda en milivoltios.
+- charge_current: Corriente de carga en amperios.
+- juntion_temperature: Temperatura de la unión en grados Celsius.
+- status0: Estado de la batería (0).
+- status1: Estado de la batería (1).
+- adc_imon: Corriente medida por el ADC.
+- capacity: Capacidad de la batería.
+  
+#### ambient
+
+- error: Indica si hay un error en los datos ambientales.
+- temperature: Temperatura ambiente en grados Celsius.
+- humidity: Humedad ambiente en porcentaje.
+- pressure: Presión atmosférica en Pascales.
+- altitude: Altitud en metros sobre el nivel del mar.
+- air_quality: Calidad del aire.
+  
+#### lux_color
+
+- error: Indica si hay un error en los datos de luz y color.
+- r: Valor de rojo en la configuración del color.
+- g: Valor de verde en la configuración del color.
+- b: Valor de azul en la configuración del color.
+- w: Valor de blanco en la configuración del color.
+
+#### noise
+
+- error: Indica si hay un error en los datos de ruido.
+- raw: Valor crudo del ruido.
+- mv: Valor en milivoltios del ruido.
+- db: Nivel de decibelios del ruido.
+- 
+#### accel
+
+- error: Indica si hay un error en los datos del acelerómetro.
+- x: Aceleración en el eje X.
+- y: Aceleración en el eje Y.
+- z: Aceleración en el eje Z.
+  
+#### gyros
+
+- error: Indica si hay un error en los datos del giroscopio.
+- x: Velocidad angular en el eje X.
+- y: Velocidad angular en el eje Y.
+- z: Velocidad angular en el eje Z.
+
+#### compass
+
+- error: Indica si hay un error en los datos del magnetómetro.
+- x: Valor del campo magnético en el eje X.
+- y: Valor del campo magnético en el eje Y.
+- z: Valor del campo magnético en el eje Z.
+
+#### gps
+
+- error: Indica si hay un error en los datos del GPS.
+- latitude: Latitud geográfica.
+- longitude: Longitud geográfica.
+- altitude: Altitud sobre el nivel del mar.
 
 
 
@@ -1214,7 +1228,7 @@ var cmd_init = {
 - chip_cores: Número de núcleos del chip.
 - factory_registered: Indica si el dispositivo está registrado en fábrica.
 - factory_datetime: Fecha y hora de registro en fábrica.
-- 
+  
 ### config
 
 - test_mode: Modo de prueba del dispositivo.
