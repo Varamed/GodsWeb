@@ -1,8 +1,7 @@
 # Conexión de nodo WebSocket
 
-Este documento ofrece un resumen de la configuración y la estructura de estado para una aplicación basada en WebSocket. Las configuraciones y estados están organizados en categorías como config, intervals, light, location, network, device y state. Cada categoría contiene varios parámetros que definen los ajustes y el estado operativo de la aplicación.
+Este documento ofrece un resumen de la configuración y la estructura de estado para una aplicación basada en WebSocket. Las configuraciones y estados están organizados en categorías como config, intervals, light, location, network, device y state. Cada categoría contiene varios parámetros que definen los ajustes y el estado operativo de los nodos.
 
-# **Comandos**
 ## get-nodes
 
 El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos actualmente alimentados en la red. Este comando es esencial para los administradores de red para obtener una visión general de los dispositivos activos y sus estados. Cuando se envía este comando, el servidor responde con detalles sobre cada nodo alimentado, incluyendo su configuración y estado actual.
@@ -234,110 +233,110 @@ var cmd_get_nodes = {
 
 ### Configuration (config)
 #### DateTime
-The DateTime configuration handles settings related to date and time, including synchronization with an SNTP server.
-- save: A boolean indicating if the settings should be saved.
+Configuración relacionada con la fecha y hora del dispositivo.
+- save: Indica si se guarda la configuración.
   
-- sntp_server: The address of the SNTP server.
+- sntp_server: Servidor SNTP utilizado para la sincronización de tiempo.
   
-- sync_to_unixtime: Indicates whether to sync to Unix time.
+- sync_to_unixtime: Valor de tiempo UNIX al que se sincroniza.
 
-- sync_with_sntp: A boolean indicating whether to sync with the SNTP server.
+- sync_with_sntp: Indica si la sincronización con SNTP está activada.
 
-- timezone: The timezone setting.
+- timezone: Zona horaria configurada en formato de reglas de cambio de horario.
 
-- updated: A boolean indicating if the configuration has been updated.
+- updated: Indica si la configuración ha sido actualizada.
 
 #### Intervals
-This section defines various time intervals for reading, sending, and storing data.
+Configuración de intervalos de tiempo para operaciones periódicas.
 
-- read: Interval for reading data.
+- read: Intervalo de lectura de datos.
 
-- save: A boolean indicating if the settings should be saved.
+- save: Indica si se guardan los intervalos configurados.
 
-- send: Interval for sending data.
+- send: Intervalo de envío de datos.
 
-- store: Interval for storing data.
+- store: Intervalo de almacenamiento de datos.
 
-- updated: A boolean indicating if the configuration has been updated.
+- updated: Indica si la configuración de intervalos ha sido actualizada.
 
 #### Light
-The Light configuration deals with the settings for light operations, such as blinking and color settings.
+Configuración de la luz o iluminación.
 
-- blink_color: Defines the color for the blinking light.
+- blink_color: Configuración del parpadeo de color.
 
-- blink_color_b: Blue component.
+  - blink_color_b: Valor de azul para el color del parpadeo.
 
-- blink_color_error: Error flag.
+  - blink_color_error: Indica si hay un error en el color del parpadeo.
 
-- blink_color_g: Green component.
+  - blink_color_g: Valor de verde para el color del parpadeo.
 
-- blink_color_r: Red component.
+  - blink_color_r: Valor de rojo para el color del parpadeo.
 
-- blink_color_w: White component.
+  - blink_color_w: Valor de blanco para el color del parpadeo.
 
-- blink_duration: Duration of the blink.
+- blink_duration: Duración del parpadeo en milisegundos.
 
-- blink_time: Time between blinks.
+- blink_time: Tiempo de inicio del parpadeo en milisegundos.
 
-- blink_type: Type of blink.
+- blink_type: Tipo de parpadeo.
 
-- color: Main color settings.
-     - b: Blue component.
+- color: Configuración del color de la luz.
+     - b: Valor de azul para la luz.
 
-     - error: Error flag.
+     - error: Indica si hay un error en el color de la luz.
      
-     - g: Green component.
+     - g: Valor de verde para la luz.
      
-     - r: Red component.
+     - r: Valor de rojo para la luz.
      
-     - w: White component.
+     - w: Valor de blanco para la luz.
 
-- mode: Operation mode.
+- mode: Modo de la luz.
 
-- restart_mode: Mode for restart.
+- restart_mode: Modo de reinicio.
 
-- save: A boolean indicating if the settings should be saved.
+- save: Indica si se guarda la configuración de luz.
 
-- updated: A boolean indicating if the configuration has been updated.
+- updated: Indica si la configuración de luz ha sido actualizada.
 
 #### Location
-The Location configuration includes settings for location identification and GPS position.
+Configuración de la ubicación.
 
-- category_id: Category identifier.
+- category_id: ID de la categoría de ubicación.
 
-- family_id: Family identifier.
+- family_id: ID de la familia de ubicación.
 
-- gps_position: GPS position settings.
+- gps_position: Posición GPS.
 
-    - altitude: Altitude.
+    - altitude: Altitud GPS.
     
-    - error: Error flag.
+    - error: Indica si hay un error en la posición GPS.
     
-    - latitude: Latitude.
+    - latitude: Latitud GPS.
     
-    - longitude: Longitude.
+    - longitude: Longitud GPS.
 
-- group_id: Group identifier.
+- group_id: ID del grupo.
 
-- location_id: Location identifier.
+- location_id: ID de la ubicación.
 
-- location_name: Name of the location.
+- location_name: Nombre de la ubicación.
 
-- save: A boolean indicating if the settings should be saved.
+- save: Indica si se guarda la configuración de ubicación.
 
-- updated: A boolean indicating if the configuration has been updated.
+- updated: Indica si la configuración de ubicación ha sido actualizada.
 
 
 #### Network
-The Network configuration includes settings related to network operations, including mesh network settings and WiFi configurations.
+Configuración de red.
 
-- mesh_authmode: Mesh network authentication mode.
+- mesh_authmode: Modo de autenticación de malla.
 
-- mesh_channel: Mesh network channel.
+- mesh_channel: Canal de malla.
 
-- mesh_channel_switch: Channel switch flag.
+- mesh_channel_switch:  Interruptor de cambio de canal de malla.
 
-- mesh_config: Detailed mesh network configuration.
+- mesh_config: Valores detallados en la configuración de malla
 
     - assoc_expire_ms: Association expiration time.
     
@@ -385,51 +384,51 @@ The Network configuration includes settings related to network operations, inclu
     
     - xon_qsize: XON queue size.
 
-- mesh_id: Mesh network identifier.
+- mesh_id: ID de la malla.
 
-- mesh_node_type: Type of mesh node.
+- mesh_node_type: Tipo de nodo de malla.
 
-- mesh_pass: Mesh network password.
+- mesh_pass: Contraseña de la malla.
 
-- mesh_root_type: Type of mesh root.
+- mesh_root_type: Tipo de raíz de malla.
 
-- mesh_router_switch: Router switch flag.
+- mesh_router_switch: Interruptor de enrutador de malla.
 
-- mesh_updated: Mesh configuration updated flag.
+- mesh_updated: Indica si la configuración de malla ha sido actualizada.
 
-- ping_interval: Ping interval.
+- ping_interval: Intervalo de ping.
 
-- ping_threshold: Ping threshold.
+- ping_threshold: Umbral de ping.
 
-- save: A boolean indicating if the settings should be saved.
+- save: Indica si se guarda la configuración de red.
 
-- updated: A boolean indicating if the configuration has been updated.
+- updated: Indica si la configuración de red ha sido actualizada.
 
-- wifi_ap_authmode: WiFi AP authentication mode.
+- wifi_ap_authmode: Modo de autenticación del punto de acceso WiFi.
 
-- wifi_ap_channel: WiFi AP channel.
+- wifi_ap_channel: Canal del punto de acceso WiFi.
 
-- wifi_ap_pass: WiFi AP password.
+- wifi_ap_pass: Contraseña del punto de acceso WiFi.
 
-- wifi_ap_ssid: WiFi AP SSID.
+- wifi_ap_ssid: SSID del punto de acceso WiFi.
 
-- wifi_ap_updated: WiFi AP configuration updated flag.
+- wifi_ap_updated: Indica si la configuración del punto de acceso WiFi ha sido actualizada.
 
-- wifi_sta_authmode: WiFi STA authentication mode.
+- wifi_sta_authmode: Modo de autenticación de la estación WiFi.
 
-- wifi_sta_channel: WiFi STA channel.
+- wifi_sta_channel: Canal de la estación WiFi.
 
-- wifi_sta_pass: WiFi STA password.
+- wifi_sta_pass: Contraseña de la estación WiFi.
 
-- wifi_sta_ssid: WiFi STA SSID.
+- wifi_sta_ssid: SSID de la estación WiFi.
 
-- wifi_sta_updated: WiFi STA configuration updated flag.
+- wifi_sta_updated: Indica si la configuración de la estación WiFi ha sido actualizada.
 
-- save:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+- save: indica si la configuración correspondiente se debe guardar o no.
 
-- update:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+- update: indica si ha habido una actualización reciente en la configuración.
 
-- version:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+- version:Versión de la configuración de red.
 
 ### Device
 The Device section provides information about the hardware and software of the device.
