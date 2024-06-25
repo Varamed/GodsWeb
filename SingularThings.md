@@ -614,7 +614,8 @@ The State section provides real-time information about the device's operational 
 
 - unixtime: Unix time.
 
-  ## get-node
+## get-node
+El comando get-node se utiliza para obtener información detallada sobre un nodo específico en la red mediante su dirección MAC única. Este comando es fundamental para recopilar datos exhaustivos sobre un dispositivo IoT particular, incluyendo detalles como el ID del dispositivo, número de serie (si está disponible), configuración de red específica, estado operativo actual (como su capa en una red de malla), y otros parámetros relevantes.
 **Command object structured**
 ```javascript
 var cmd_get_node = {
@@ -838,10 +839,43 @@ var cmd_get_node = {
   }
 }
 ```
+### mac_address
+Dirección MAC única del dispositivo.
+
+### device
+Detalles del dispositivo en sí.
+
+- device_id: Identificador del dispositivo (valor entero).
+- serial_number: Número de serie del dispositivo (cadena vacía en este caso).
+- model: Modelo del dispositivo ("ST-INE-002-004").
+- name: Nombre del dispositivo ("ST-INE-002-004").
+- token: Token de autenticación (cadena vacía).
+- atecc_serial_str: No especificado en este caso.
+- firmware_version: Versión del firmware ("1.0.2").
+- idf_version: Versión del IDF (Framework de IoT de Espressif) ("v5.2.2-185-g018409d99b").
+- idf_datetime: Fecha y hora del IDF ("Jun 25 2024 - 09:42:41").
+- api_version: Versión de la API (valor entero, 12596).
+- chip_id, chip_features, chip_revision, chip_cores: Detalles específicos del chip.
+- factory_registered, factory_datetime: Estado de registro en fábrica y fecha.
+
+### config
+Configuración del dispositivo.
+
+- version: Versión de la configuración (valor entero, 1).
+- updated, save: Indicadores de actualización y guardado.
+- datetime: Configuración de fecha y hora.
+- location: Configuración de ubicación.
+- network: Configuración de red (incluye configuraciones de Wi-Fi y malla).
+- light: Configuración de luz.
+- intervals: Intervalos de lectura, almacenamiento y envío.
+
+###state
+Estado actual del dispositivo.
+- mesh: Estado de la malla (conectividad, direcciones MAC, etc.).
+- sensors: Estado de los sensores del dispositivo (datos como temperatura, humedad, batería, etc.).
 
 
-
-  ## init
+## init
 
   
 
