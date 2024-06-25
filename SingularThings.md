@@ -10,15 +10,14 @@ This document provides an overview of the configuration and state structure for 
 
 The `get-nodes` command is used to request the list of all currently powered nodes in the network. This command is essential for network administrators to get an overview of active devices and their statuses. When this command is sent, the server responds with details about each powered node, including their configuration and state.
 
-**Command object structured**
-
+**command y data**
 ```javascript
 var cmd_get_nodes = {
     command: 'get-nodes',
     data: {}
   }
 ```
-**Response JSON**
+**Ejemplo de respuesta JSON**
 ```json
 [
 {
@@ -616,7 +615,7 @@ The State section provides real-time information about the device's operational 
 
 ## get-node
 El comando get-node se utiliza para obtener información detallada sobre un nodo específico en la red mediante su dirección MAC única. Este comando es fundamental para recopilar datos exhaustivos sobre un dispositivo IoT particular, incluyendo detalles como el ID del dispositivo, número de serie (si está disponible), configuración de red específica, estado operativo actual (como su capa en una red de malla), y otros parámetros relevantes.
-**Command object structured**
+**command y data**
 ```javascript
 var cmd_get_node = {
     command: 'get-node',
@@ -625,7 +624,7 @@ var cmd_get_node = {
     }
   }
 ```
-**Response JSON**
+**Ejemplo de respuesta JSON**
 ```json
 {
   "mac_address": "40:4c:ca:45:1e:08",
@@ -1061,6 +1060,7 @@ Datos recogidos por varios sensores del dispositivo.
 
 ## init
 "init" es el primer comando o mensaje enviado por un cliente WebSocket para iniciar la conexión con un servidor WebSocket, facilitando así la comunicación bidireccional en tiempo real entre ambos extremos.
+**command y data**
 ```javascript
 var cmd_init = {
     command: 'init',
@@ -1070,6 +1070,7 @@ var cmd_init = {
     }
   }
 ```
+**Ejemplo de respuesta JSON**
 ```json
 {
   "device": {
