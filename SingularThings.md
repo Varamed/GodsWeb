@@ -615,7 +615,7 @@ The State section provides real-time information about the device's operational 
 - unixtime: Unix time.
 
   ## get-node
-   **Command object structured**
+**Command object structured**
 ```javascript
 var cmd_get_node = {
     command: 'get-node',
@@ -624,6 +624,7 @@ var cmd_get_node = {
     }
   }
 ```
+**Response JSON**
 ```json
 {
   "mac_address": "40:4c:ca:45:1e:08",
@@ -837,6 +838,7 @@ var cmd_get_node = {
   }
 }
 ```
+
 
 
   ## init
