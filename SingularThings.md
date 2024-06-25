@@ -5,7 +5,7 @@ Este documento ofrece un resumen de la configuración y la estructura de estado 
 # **Comandos**
 ## get-nodes
 
-The `get-nodes` command is used to request the list of all currently powered nodes in the network. This command is essential for network administrators to get an overview of active devices and their statuses. When this command is sent, the server responds with details about each powered node, including their configuration and state.
+El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos actualmente alimentados en la red. Este comando es esencial para los administradores de red para obtener una visión general de los dispositivos activos y sus estados. Cuando se envía este comando, el servidor responde con detalles sobre cada nodo alimentado, incluyendo su configuración y estado actual.
 
 **command y data**
 ```javascript
