@@ -22,9 +22,6 @@ El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos act
 ```
 **Ejemplo de respuesta JSON**
 ```json
-Claro, aquí está la estructura corregida del JSON donde "config" está al mismo nivel que "device" y "state", y "sensors" está dentro de "state":
-
-```json
 {
     "command": "get-nodes",
     "data": {
@@ -241,7 +238,6 @@ Claro, aquí está la estructura corregida del JSON donde "config" está al mism
         "node_list_size": 3
     }
 }
-```
 ```
 ## data
 Datos de todos los nodos visibles
