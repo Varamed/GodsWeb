@@ -5,10 +5,377 @@ Este documento ofrece un resumen de la configuración y la estructura de estado 
 # Comandos
 
 1. [init](#init)
-2. [get-node](#get-node)
-3. [get-nodes](#get-nodes)
+2. [get-nodes](#get-nodes)
+3. [get-node](#get-node)
 4. [set-network](#set-network)
-   
+
+
+## init
+`init` es el primer comando o mensaje enviado por un cliente WebSocket para iniciar la conexión con un servidor WebSocket, facilitando así la comunicación bidireccional en tiempo real entre ambos extremos.
+
+**command y data**
+```json
+{
+  "command": "init",
+  "data": {
+    "protocol": 1,
+    "security_token": ""
+  }
+}
+```
+**Ejemplo de respuesta JSON**
+```json
+{
+"command": "init-success"
+"data":{
+  "device": {
+    "device_id": 114,
+    "serial_number": "0450-D0B7-7017-DC22",
+    "model": "ST-INE-003-002",
+    "name": "Visualfy Bridge",
+    "token": "1c62ef10f4a492b8638c5169359b54aa95984296c2b2149cb7b18441d1352fab",
+    "atecc_serial_str": "",
+    "firmware_version": "1.0.4",
+    "idf_version": "v5.2.2-185-g018409d99b",
+    "idf_datetime": "",
+    "api_version": 1,
+    "chip_id": 1,
+    "chip_features": 50,
+    "chip_revision": 301,
+    "chip_cores": 2,
+    "factory_registered": true,
+    "factory_datetime": "2024-05-09 18:12:12"
+  },
+  "config": {
+    "test_mode": "TEST_MODE_NONE",
+    "datetime": {
+      "save": true,
+      "sync_to_unixtime": 1719314785,
+      "timezone": "CET-1CEST,M3.5.0,M10.5.0/3",
+      "sync_with_sntp": true,
+      "sntp_server": "pool.ntp.org",
+      "unixtime": 1719317151,
+      "datetime": "2024-06-25 14:05:51"
+    },
+    "location": {
+      "save": false,
+      "category_id": 0,
+      "group_id": 0,
+      "family_id": 0,
+      "location_id": 0,
+      "gps_position": {
+        "error": false,
+        "latitude": 0,
+        "longitude": 0,
+        "altitude": 0
+      }
+    },
+    "network": {
+      "save": true,
+      "ping_interval": 15000,
+      "ping_threshold": 3,
+      "wifi_ap_ssid": "BridgeAP",
+      "wifi_ap_pass": "password",
+      "wifi_ap_authmode": 6,
+      "wifi_ap_channel": 11,
+      "wifi_sta_ssid": "TP-Link_C49C",
+      "wifi_sta_pass": "8165044699",
+      "wifi_sta_authmode": 6,
+      "wifi_sta_channel": 11,
+      "mesh_id": "999999",
+      "mesh_pass": "password",
+      "mesh_authmode": 6,
+      "mesh_channel": 11,
+      "mesh_channel_switch": 0,
+      "mesh_router_switch": 0,
+      "mesh_root_type": 1,
+      "mesh_node_type": 2
+    },
+    "intervals_bridge": {
+      "save": true,
+      "read": 5000,
+      "store": 60000,
+      "send": 5000
+    },
+    "intervals_node": {
+      "save": true,
+      "read": 5000,
+      "store": 60000,
+      "send": 30000
+    },
+    "server": {
+      "https_active": false,
+      "task_stack_size": 24576,
+      "task_priority": 18,
+      "task_core_id": 1,
+      "recv_wait_timeout": 2000,
+      "send_wait_timeout": 2000
+    }
+  },
+  "state": {
+    "current_millis": 0,
+    "last_millis": 0,
+    "unixtime": 0,
+    "unixtime_synced": false,
+    "is_gpio_init": true,
+    "is_i2c_init": false,
+    "is_spi_init": false,
+    "is_nvs_init": true,
+    "is_lfs_pub_init": true,
+    "is_lfs_prv_init": true,
+    "is_tcpip_init": true,
+    "is_netbios_init": true,
+    "is_mdns_init": true,
+    "is_sntp_init": true,
+    "is_ws_started": true,
+    "is_ws_https": false,
+    "eth_init": true,
+    "eth_connected": true,
+    "eth_clients": 0,
+    "eth_mac": "30:c9:22:9b:c7:e3",
+    "eth_state": 0,
+    "eth_has_internet": false,
+    "wifi_sta_init": true,
+    "wifi_sta_connected": false,
+    "wifi_sta_retry_num": 0,
+    "wifi_sta_clients": 0,
+    "wifi_sta_mac": "30:c9:22:9b:c7:e0",
+    "wifi_sta_state": 0,
+    "wifi_ap_init": false,
+    "wifi_ap_connected": false,
+    "wifi_ap_countdown": 0,
+    "wifi_ap_clients": 0,
+    "wifi_ap_mac": "30:c9:22:9b:c7:e1",
+    "wifi_ap_state": 0,
+    "bt_mac": "30:c9:22:9b:c7:e2"
+  }
+}
+}
+```
+## data 
+
+### device
+
+- device_id: Identificador único del dispositivo.
+
+- serial_number: Número de serie del dispositivo.
+
+- model: Modelo del dispositivo.
+
+- name: Nombre asignado al dispositivo.
+
+- token: Token de seguridad del dispositivo.
+
+- atecc_serial_str: Cadena de número de serie del módulo de seguridad ATECC.
+
+- firmware_version: Versión del firmware actual del dispositivo.
+
+- idf_version: Versión del ESP-IDF (Espressif IoT Development Framework).
+
+- idf_datetime: Fecha y hora de compilación del ESP-IDF.
+
+- api_version: Versión de la API utilizada.
+
+- chip_id: ID del chip principal del dispositivo.
+
+- chip_features: Características específicas del chip.
+
+- chip_revision: Revisión del chip.
+
+- chip_cores: Número de núcleos del chip.
+
+- factory_registered: Indica si el dispositivo está registrado en fábrica.
+
+- factory_datetime: Fecha y hora de registro en fábrica.
+  
+### config
+
+- test_mode: Modo de prueba del dispositivo.
+  
+#### datetime
+
+- save: Indica si la configuración de fecha y hora se guarda.
+
+- sync_to_unixtime: Hora Unix a la que se sincroniza el dispositivo.
+
+- timezone: Zona horaria configurada para el dispositivo.
+
+- sync_with_sntp: Indica si el dispositivo se sincroniza con un servidor SNTP.
+
+- sntp_server: Servidor SNTP utilizado para la sincronización de hora.
+
+- unixtime: Hora Unix actual del dispositivo.
+
+- datetime: Fecha y hora actual del dispositivo.
+
+#### location
+
+- save: Indica si la configuración de ubicación se guarda.
+
+- category_id: ID de la categoría de ubicación.
+
+- group_id: ID del grupo de ubicación.
+
+- family_id: ID de la familia de ubicación.
+
+- location_id: ID de la ubicación.
+
+#### gps_position
+
+- error: Indica si hay un error en los datos del GPS.
+
+- latitude: Latitud actual del dispositivo.
+
+- longitude: Longitud actual del dispositivo.
+
+- altitude: Altitud actual del dispositivo.
+
+#### network
+
+- save: Indica si la configuración de red se guarda.
+
+- ping_interval: Intervalo de tiempo entre pings en milisegundos.
+
+- ping_threshold: Umbral de pings fallidos antes de considerar que hay un problema.
+
+- wifi_ap_ssid: SSID del punto de acceso WiFi del dispositivo.
+
+- wifi_ap_pass: Contraseña del punto de acceso WiFi del dispositivo.
+
+- wifi_ap_authmode: Modo de autenticación del punto de acceso WiFi.
+
+- wifi_ap_channel: Canal del punto de acceso WiFi.
+
+- wifi_sta_ssid: SSID de la red WiFi a la que se conecta el dispositivo.
+
+- wifi_sta_pass: Contraseña de la red WiFi a la que se conecta el dispositivo.
+
+- wifi_sta_authmode: Modo de autenticación de la red WiFi a la que se conecta el dispositivo.
+
+- wifi_sta_channel: Canal de la red WiFi a la que se conecta el dispositivo.
+
+- mesh_id: Identificador de la red Mesh.
+
+- mesh_pass: Contraseña de la red Mesh.
+
+- mesh_authmode: Modo de autenticación de la red Mesh.
+
+- mesh_channel: Canal de la red Mesh.
+
+- mesh_channel_switch: Indica si la conmutación de canal Mesh está activada.
+
+- mesh_router_switch: Indica si la conmutación de enrutador Mesh está activada.
+
+- mesh_root_type: Tipo de nodo raíz en la red Mesh.
+
+- mesh_node_type: Tipo de nodo en la red Mesh.
+
+#### intervals_bridge
+
+- save: Indica si los intervalos del bridge se guardan.
+
+- read: Intervalo de lectura en milisegundos.
+
+- store: Intervalo de almacenamiento en milisegundos.
+
+- send: Intervalo de envío en milisegundos.
+
+#### intervals_node
+
+- save: Indica si los intervalos del nodo se guardan.
+
+- read: Intervalo de lectura en milisegundos.
+
+- store: Intervalo de almacenamiento en milisegundos.
+
+- send: Intervalo de envío en milisegundos.
+
+#### server
+
+- https_active: Indica si el servidor HTTPS está activo.
+
+- task_stack_size: Tamaño de la pila de tareas del servidor.
+
+- task_priority: Prioridad de la tarea del servidor.
+
+- task_core_id: ID del núcleo en el que se ejecuta la tarea del servidor.
+
+- recv_wait_timeout: Tiempo de espera para recibir datos en milisegundos.
+
+- send_wait_timeout: Tiempo de espera para enviar datos en milisegundos.
+
+### state
+
+- current_millis: Tiempo actual en milisegundos.
+
+- last_millis: Último tiempo registrado en milisegundos.
+
+- unixtime: Tiempo Unix actual.
+
+- unixtime_synced: Indica si el tiempo Unix está sincronizado.
+
+- is_gpio_init: Indica si la inicialización GPIO está completa.
+
+- is_i2c_init: Indica si la inicialización I2C está completa.
+
+- is_spi_init: Indica si la inicialización SPI está completa.
+
+- is_nvs_init: Indica si la inicialización NVS (Non-Volatile Storage) está completa.
+
+- is_lfs_pub_init: Indica si la inicialización de LFS (Little File System) pública está completa.
+
+- is_lfs_prv_init: Indica si la inicialización de LFS privada está completa.
+
+- is_tcpip_init: Indica si la inicialización de TCP/IP está completa.
+
+- is_netbios_init: Indica si la inicialización de NetBIOS está completa.
+
+- is_mdns_init: Indica si la inicialización de mDNS está completa.
+
+- is_sntp_init: Indica si la inicialización de SNTP (Simple Network Time Protocol) está completa.
+
+- is_ws_started: Indica si el servicio WebSocket está iniciado.
+
+- is_ws_https: Indica si el servicio WebSocket está utilizando HTTPS.
+
+- eth_init: Indica si la interfaz Ethernet está inicializada.
+
+- eth_connected: Indica si la interfaz Ethernet está conectada.
+
+- eth_clients: Número de clientes conectados a través de Ethernet.
+
+- eth_mac: Dirección MAC de la interfaz Ethernet.
+
+- eth_state: Estado de la interfaz Ethernet.
+
+- eth_has_internet: Indica si la interfaz Ethernet tiene conexión a Internet.
+
+- wifi_sta_init: Indica si la inicialización de la estación WiFi está completa.
+
+- wifi_sta_connected: Indica si la estación WiFi está conectada.
+
+- wifi_sta_retry_num: Número de intentos de conexión WiFi.
+
+- wifi_sta_clients: Número de clientes conectados a la estación WiFi.
+
+- wifi_sta_mac: Dirección MAC de la estación WiFi.
+
+- wifi_sta_state: Estado de la estación WiFi.
+
+- wifi_ap_init: Indica si la inicialización del punto de acceso WiFi está completa.
+
+- wifi_ap_connected: Indica si el punto de acceso WiFi está conectado.
+
+- wifi_ap_countdown: Contador para el punto de acceso WiFi.
+
+- wifi_ap_clients: Número de clientes conectados al punto de acceso WiFi.
+
+- wifi_ap_mac: Dirección MAC del punto de acceso WiFi.
+
+- wifi_ap_state: Estado del punto de acceso WiFi.
+
+- bt_mac: Dirección MAC del dispositivo Bluetooth.
+  
 ## get-nodes
 
 El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos actualmente alimentados en la red. Este comando es esencial para los administradores de red para obtener una visión general de los dispositivos activos y sus estados. Cuando se envía este comando, el servidor responde con detalles sobre cada nodo alimentado, incluyendo su configuración y estado actual.
@@ -1277,376 +1644,6 @@ Datos recogidos por varios sensores del dispositivo.
 - altitude: Altitud sobre el nivel del mar.
 
 
-
-
-
-
-## init
-`init` es el primer comando o mensaje enviado por un cliente WebSocket para iniciar la conexión con un servidor WebSocket, facilitando así la comunicación bidireccional en tiempo real entre ambos extremos.
-
-**command y data**
-```json
-{
-  "command": "init",
-  "data": {
-    "protocol": 1,
-    "security_token": ""
-  }
-}
-```
-**Ejemplo de respuesta JSON**
-```json
-{
-"command": "init-success"
-"data":{
-  "device": {
-    "device_id": 114,
-    "serial_number": "0450-D0B7-7017-DC22",
-    "model": "ST-INE-003-002",
-    "name": "Visualfy Bridge",
-    "token": "1c62ef10f4a492b8638c5169359b54aa95984296c2b2149cb7b18441d1352fab",
-    "atecc_serial_str": "",
-    "firmware_version": "1.0.4",
-    "idf_version": "v5.2.2-185-g018409d99b",
-    "idf_datetime": "",
-    "api_version": 1,
-    "chip_id": 1,
-    "chip_features": 50,
-    "chip_revision": 301,
-    "chip_cores": 2,
-    "factory_registered": true,
-    "factory_datetime": "2024-05-09 18:12:12"
-  },
-  "config": {
-    "test_mode": "TEST_MODE_NONE",
-    "datetime": {
-      "save": true,
-      "sync_to_unixtime": 1719314785,
-      "timezone": "CET-1CEST,M3.5.0,M10.5.0/3",
-      "sync_with_sntp": true,
-      "sntp_server": "pool.ntp.org",
-      "unixtime": 1719317151,
-      "datetime": "2024-06-25 14:05:51"
-    },
-    "location": {
-      "save": false,
-      "category_id": 0,
-      "group_id": 0,
-      "family_id": 0,
-      "location_id": 0,
-      "gps_position": {
-        "error": false,
-        "latitude": 0,
-        "longitude": 0,
-        "altitude": 0
-      }
-    },
-    "network": {
-      "save": true,
-      "ping_interval": 15000,
-      "ping_threshold": 3,
-      "wifi_ap_ssid": "BridgeAP",
-      "wifi_ap_pass": "password",
-      "wifi_ap_authmode": 6,
-      "wifi_ap_channel": 11,
-      "wifi_sta_ssid": "TP-Link_C49C",
-      "wifi_sta_pass": "8165044699",
-      "wifi_sta_authmode": 6,
-      "wifi_sta_channel": 11,
-      "mesh_id": "999999",
-      "mesh_pass": "password",
-      "mesh_authmode": 6,
-      "mesh_channel": 11,
-      "mesh_channel_switch": 0,
-      "mesh_router_switch": 0,
-      "mesh_root_type": 1,
-      "mesh_node_type": 2
-    },
-    "intervals_bridge": {
-      "save": true,
-      "read": 5000,
-      "store": 60000,
-      "send": 5000
-    },
-    "intervals_node": {
-      "save": true,
-      "read": 5000,
-      "store": 60000,
-      "send": 30000
-    },
-    "server": {
-      "https_active": false,
-      "task_stack_size": 24576,
-      "task_priority": 18,
-      "task_core_id": 1,
-      "recv_wait_timeout": 2000,
-      "send_wait_timeout": 2000
-    }
-  },
-  "state": {
-    "current_millis": 0,
-    "last_millis": 0,
-    "unixtime": 0,
-    "unixtime_synced": false,
-    "is_gpio_init": true,
-    "is_i2c_init": false,
-    "is_spi_init": false,
-    "is_nvs_init": true,
-    "is_lfs_pub_init": true,
-    "is_lfs_prv_init": true,
-    "is_tcpip_init": true,
-    "is_netbios_init": true,
-    "is_mdns_init": true,
-    "is_sntp_init": true,
-    "is_ws_started": true,
-    "is_ws_https": false,
-    "eth_init": true,
-    "eth_connected": true,
-    "eth_clients": 0,
-    "eth_mac": "30:c9:22:9b:c7:e3",
-    "eth_state": 0,
-    "eth_has_internet": false,
-    "wifi_sta_init": true,
-    "wifi_sta_connected": false,
-    "wifi_sta_retry_num": 0,
-    "wifi_sta_clients": 0,
-    "wifi_sta_mac": "30:c9:22:9b:c7:e0",
-    "wifi_sta_state": 0,
-    "wifi_ap_init": false,
-    "wifi_ap_connected": false,
-    "wifi_ap_countdown": 0,
-    "wifi_ap_clients": 0,
-    "wifi_ap_mac": "30:c9:22:9b:c7:e1",
-    "wifi_ap_state": 0,
-    "bt_mac": "30:c9:22:9b:c7:e2"
-  }
-}
-}
-```
-## data 
-
-### device
-
-- device_id: Identificador único del dispositivo.
-
-- serial_number: Número de serie del dispositivo.
-
-- model: Modelo del dispositivo.
-
-- name: Nombre asignado al dispositivo.
-
-- token: Token de seguridad del dispositivo.
-
-- atecc_serial_str: Cadena de número de serie del módulo de seguridad ATECC.
-
-- firmware_version: Versión del firmware actual del dispositivo.
-
-- idf_version: Versión del ESP-IDF (Espressif IoT Development Framework).
-
-- idf_datetime: Fecha y hora de compilación del ESP-IDF.
-
-- api_version: Versión de la API utilizada.
-
-- chip_id: ID del chip principal del dispositivo.
-
-- chip_features: Características específicas del chip.
-
-- chip_revision: Revisión del chip.
-
-- chip_cores: Número de núcleos del chip.
-
-- factory_registered: Indica si el dispositivo está registrado en fábrica.
-
-- factory_datetime: Fecha y hora de registro en fábrica.
-  
-### config
-
-- test_mode: Modo de prueba del dispositivo.
-  
-#### datetime
-
-- save: Indica si la configuración de fecha y hora se guarda.
-
-- sync_to_unixtime: Hora Unix a la que se sincroniza el dispositivo.
-
-- timezone: Zona horaria configurada para el dispositivo.
-
-- sync_with_sntp: Indica si el dispositivo se sincroniza con un servidor SNTP.
-
-- sntp_server: Servidor SNTP utilizado para la sincronización de hora.
-
-- unixtime: Hora Unix actual del dispositivo.
-
-- datetime: Fecha y hora actual del dispositivo.
-
-#### location
-
-- save: Indica si la configuración de ubicación se guarda.
-
-- category_id: ID de la categoría de ubicación.
-
-- group_id: ID del grupo de ubicación.
-
-- family_id: ID de la familia de ubicación.
-
-- location_id: ID de la ubicación.
-
-#### gps_position
-
-- error: Indica si hay un error en los datos del GPS.
-
-- latitude: Latitud actual del dispositivo.
-
-- longitude: Longitud actual del dispositivo.
-
-- altitude: Altitud actual del dispositivo.
-
-#### network
-
-- save: Indica si la configuración de red se guarda.
-
-- ping_interval: Intervalo de tiempo entre pings en milisegundos.
-
-- ping_threshold: Umbral de pings fallidos antes de considerar que hay un problema.
-
-- wifi_ap_ssid: SSID del punto de acceso WiFi del dispositivo.
-
-- wifi_ap_pass: Contraseña del punto de acceso WiFi del dispositivo.
-
-- wifi_ap_authmode: Modo de autenticación del punto de acceso WiFi.
-
-- wifi_ap_channel: Canal del punto de acceso WiFi.
-
-- wifi_sta_ssid: SSID de la red WiFi a la que se conecta el dispositivo.
-
-- wifi_sta_pass: Contraseña de la red WiFi a la que se conecta el dispositivo.
-
-- wifi_sta_authmode: Modo de autenticación de la red WiFi a la que se conecta el dispositivo.
-
-- wifi_sta_channel: Canal de la red WiFi a la que se conecta el dispositivo.
-
-- mesh_id: Identificador de la red Mesh.
-
-- mesh_pass: Contraseña de la red Mesh.
-
-- mesh_authmode: Modo de autenticación de la red Mesh.
-
-- mesh_channel: Canal de la red Mesh.
-
-- mesh_channel_switch: Indica si la conmutación de canal Mesh está activada.
-
-- mesh_router_switch: Indica si la conmutación de enrutador Mesh está activada.
-
-- mesh_root_type: Tipo de nodo raíz en la red Mesh.
-
-- mesh_node_type: Tipo de nodo en la red Mesh.
-
-#### intervals_bridge
-
-- save: Indica si los intervalos del bridge se guardan.
-
-- read: Intervalo de lectura en milisegundos.
-
-- store: Intervalo de almacenamiento en milisegundos.
-
-- send: Intervalo de envío en milisegundos.
-
-#### intervals_node
-
-- save: Indica si los intervalos del nodo se guardan.
-
-- read: Intervalo de lectura en milisegundos.
-
-- store: Intervalo de almacenamiento en milisegundos.
-
-- send: Intervalo de envío en milisegundos.
-
-#### server
-
-- https_active: Indica si el servidor HTTPS está activo.
-
-- task_stack_size: Tamaño de la pila de tareas del servidor.
-
-- task_priority: Prioridad de la tarea del servidor.
-
-- task_core_id: ID del núcleo en el que se ejecuta la tarea del servidor.
-
-- recv_wait_timeout: Tiempo de espera para recibir datos en milisegundos.
-
-- send_wait_timeout: Tiempo de espera para enviar datos en milisegundos.
-
-### state
-
-- current_millis: Tiempo actual en milisegundos.
-
-- last_millis: Último tiempo registrado en milisegundos.
-
-- unixtime: Tiempo Unix actual.
-
-- unixtime_synced: Indica si el tiempo Unix está sincronizado.
-
-- is_gpio_init: Indica si la inicialización GPIO está completa.
-
-- is_i2c_init: Indica si la inicialización I2C está completa.
-
-- is_spi_init: Indica si la inicialización SPI está completa.
-
-- is_nvs_init: Indica si la inicialización NVS (Non-Volatile Storage) está completa.
-
-- is_lfs_pub_init: Indica si la inicialización de LFS (Little File System) pública está completa.
-
-- is_lfs_prv_init: Indica si la inicialización de LFS privada está completa.
-
-- is_tcpip_init: Indica si la inicialización de TCP/IP está completa.
-
-- is_netbios_init: Indica si la inicialización de NetBIOS está completa.
-
-- is_mdns_init: Indica si la inicialización de mDNS está completa.
-
-- is_sntp_init: Indica si la inicialización de SNTP (Simple Network Time Protocol) está completa.
-
-- is_ws_started: Indica si el servicio WebSocket está iniciado.
-
-- is_ws_https: Indica si el servicio WebSocket está utilizando HTTPS.
-
-- eth_init: Indica si la interfaz Ethernet está inicializada.
-
-- eth_connected: Indica si la interfaz Ethernet está conectada.
-
-- eth_clients: Número de clientes conectados a través de Ethernet.
-
-- eth_mac: Dirección MAC de la interfaz Ethernet.
-
-- eth_state: Estado de la interfaz Ethernet.
-
-- eth_has_internet: Indica si la interfaz Ethernet tiene conexión a Internet.
-
-- wifi_sta_init: Indica si la inicialización de la estación WiFi está completa.
-
-- wifi_sta_connected: Indica si la estación WiFi está conectada.
-
-- wifi_sta_retry_num: Número de intentos de conexión WiFi.
-
-- wifi_sta_clients: Número de clientes conectados a la estación WiFi.
-
-- wifi_sta_mac: Dirección MAC de la estación WiFi.
-
-- wifi_sta_state: Estado de la estación WiFi.
-
-- wifi_ap_init: Indica si la inicialización del punto de acceso WiFi está completa.
-
-- wifi_ap_connected: Indica si el punto de acceso WiFi está conectado.
-
-- wifi_ap_countdown: Contador para el punto de acceso WiFi.
-
-- wifi_ap_clients: Número de clientes conectados al punto de acceso WiFi.
-
-- wifi_ap_mac: Dirección MAC del punto de acceso WiFi.
-
-- wifi_ap_state: Estado del punto de acceso WiFi.
-
-- bt_mac: Dirección MAC del dispositivo Bluetooth.
-  
 ## set-network
 El comando `set-network` tiene como objetivo actualizar la configuración de red. La función valida y procesa cada campo de configuración individualmente, actualizando la configuración interna si los datos son válidos. El JSON devuelto consistirá en booleanos que indican si cada valor ha sido modificado dentro de la configuración.
 
