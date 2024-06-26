@@ -1706,7 +1706,7 @@ El comando `set-network` tiene como objetivo actualizar la configuración de red
 }
 
 ```
-### data
+## data
 - save: Indica si se debe guardar la configuración actualizada. (Booleano)
   
 - ping_interval: Intervalo de tiempo en segundos entre los pings de mantenimiento de red. (Int entre 1 y 255)
