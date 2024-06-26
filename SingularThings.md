@@ -1709,21 +1709,21 @@ El comando `set-network` tiene como objetivo actualizar la configuración de red
 ### data
 - save: Indica si se debe guardar la configuración actualizada. (Booleano)
   
-- ping_interval: Intervalo de tiempo en segundos entre los pings de mantenimiento de red. (Entre 1 y 255)
+- ping_interval: Intervalo de tiempo en segundos entre los pings de mantenimiento de red. (Int entre 1 y 255)
   
-- ping_threshold: Umbral mínimo de ping para considerar que la conexión está estable. (Entre 1 y 65,535)
+- ping_threshold: Umbral mínimo de ping para considerar que la conexión está estable. (Int entre 1 y 65,535)
 
-- wifi_ap_ssid: Nombre del SSID para el punto de acceso Wi-Fi. (el tamaño del buffer definido)
+- wifi_ap_ssid: Nombre del SSID para el punto de acceso Wi-Fi. (String de 1 a 32 caracteres)
 
-- wifi_ap_pass: Contraseña del punto de acceso Wi-Fi. (el tamaño del buffer definido)
+- wifi_ap_pass: Contraseña del punto de acceso Wi-Fi. (String de 1 a 32 caracteres)
 
 - wifi_ap_authmode: Modo de autenticación del punto de acceso Wi-Fi. (Int de 0 a 3)
 
-- wifi_ap_channel: Canal de transmisión del punto de acceso Wi-Fi. (Número entero entre 1 y 13)
+- wifi_ap_channel: Canal de transmisión del punto de acceso Wi-Fi. (Int entre 1 y 13)
 
-- wifi_sta_ssid: Nombre del SSID para la estación Wi-Fi (cliente). (el tamaño del buffer definido)
+- wifi_sta_ssid: Nombre del SSID para la estación Wi-Fi (cliente). (String de 1 a 32 caracteres)
 
-- wifi_sta_pass: Contraseña para la conexión como estación Wi-Fi. (el tamaño del buffer definido)
+- wifi_sta_pass: Contraseña para la conexión como estación Wi-Fi. (String de 1 a 32 caracteres)
 
 - wifi_sta_authmode: Modo de autenticación para la conexión como estación Wi-Fi. (Int de 0 a 3)
 
@@ -1731,7 +1731,7 @@ El comando `set-network` tiene como objetivo actualizar la configuración de red
 
 - mesh_id: Identificador único para la red mesh. (6 caracteres)
 
-- mesh_pass: Contraseña para la red mesh. (el tamaño del buffer definido)
+- mesh_pass: Contraseña para la red mesh. (String de 1 a 32 caracteres)
 
 - mesh_authmode: Modo de autenticación para la red mesh. (Int de 0 a 3)
 
@@ -1739,7 +1739,7 @@ El comando `set-network` tiene como objetivo actualizar la configuración de red
 
 - mesh_channel_switch: Configuración de cambio de canal para la red mesh. (Int de 1 a 11)
 
-- mesh_backoff_rssi: Valor de RSSI de retroceso para la red mesh.
+- mesh_backoff_rssi: Valor de RSSI de retroceso para la red mesh. (Int entre -128 y 127)
 
 - mesh_max_capacity: Capacidad máxima de la red mesh. (Int de 1 a 1000)
 
