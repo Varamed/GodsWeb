@@ -232,6 +232,8 @@ var cmd_get_nodes = {
 
 
 ### config
+configuración general del dispositivo
+
 #### DateTime
 Configuración relacionada con la fecha y hora del dispositivo.
 - save: Indica si se guarda la configuración.
@@ -317,7 +319,6 @@ Posición GPS.
     
 - longitude: Longitud GPS.
 
-
 - group_id: ID del grupo.
 
 - location_id: ID de la ubicación.
@@ -355,8 +356,7 @@ Valores detallados en la configuración de malla
     
 - data_drop_enable: Indicador de habilitación de descarte de datos.
     
-##### max_connection 
-Número máximo de conexiones.
+- max_connection: Número máximo de conexiones.
     
 - max_layer: Máxima capa de red.
     
@@ -477,6 +477,7 @@ La sección de Device proporciona información sobre el hardware y software del 
 La sección de State proporciona información en tiempo real sobre el estado operativo del dispositivo, incluido el estado de la red y las lecturas de sensores.
 
 #### Mesh
+
 - mesh_childs: Número de hijos en la malla.
 
 - mesh_childs_total: Número total de hijos en la malla.
@@ -915,19 +916,28 @@ Configuración relacionada con la fecha y hora del dispositivo.
 configuración de ubicación del dispositivo
 
 - updated: Indica si la configuración de ubicación ha sido actualizada recientemente.
+
 - save: Indica si la configuración de ubicación debe ser guardada.
+
 - category_id: El ID de la categoría de ubicación.
+
 - group_id: El ID del grupo de ubicación.
+
 - family_id: El ID de la familia de ubicación.
+
 - location_id: El ID de la ubicación específica.
-location_name: El nombre de la ubicación.
+
+- location_name: El nombre de la ubicación.
 
 ##### gps_position
 Contiene información de la posición GPS.
 
 - error: Indica si hay un error en la posición GPS.
+
 - latitude: La latitud de la ubicación.
+
 - longitude: La longitud de la ubicación.
+
 - altitude: La altitud de la ubicación.
  
 #### network
@@ -979,7 +989,8 @@ configuración de red del dispositivo
 
 - mesh_node_type: El tipo de nodo en la red mesh.
 
-#### mesh_config:
+##### mesh_config
+
 - vote_percentage: Porcentaje de votos requerido para tomar decisiones en la red mesh.
 
 - vote_max_count: Número máximo de votos permitidos.
@@ -1406,7 +1417,7 @@ var cmd_init = {
 ### config
 
 - test_mode: Modo de prueba del dispositivo.
-- 
+  
 #### datetime
 - save: Indica si la configuración de fecha y hora se guarda.
 
@@ -1424,15 +1435,15 @@ var cmd_init = {
 
 #### location
 
-save: Indica si la configuración de ubicación se guarda.
+- save: Indica si la configuración de ubicación se guarda.
 
-category_id: ID de la categoría de ubicación.
+- category_id: ID de la categoría de ubicación.
 
-group_id: ID del grupo de ubicación.
+- group_id: ID del grupo de ubicación.
 
-family_id: ID de la familia de ubicación.
+- family_id: ID de la familia de ubicación.
 
-location_id: ID de la ubicación.
+- location_id: ID de la ubicación.
 
 #### gps_position
 
