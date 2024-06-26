@@ -269,7 +269,7 @@ Configuración de intervalos de tiempo para operaciones periódicas.
 
 - updated: Indica si la configuración de intervalos ha sido actualizada.
 
-#### Light
+- #### Light
 Configuración de la luz o iluminación.
 
 - blink_color: Configuración del parpadeo de color.
