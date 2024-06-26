@@ -23,7 +23,7 @@ El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos act
 **Ejemplo de respuesta JSON**
 ```json
 {
-"command": get-nodes
+"command": "get-nodes"
 "data":{
  "node_data":[
 {
