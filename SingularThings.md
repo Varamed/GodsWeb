@@ -22,6 +22,7 @@ El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos act
 ```
 **Ejemplo de respuesta JSON**
 ```json
+{
 "command": get-nodes
 "data":{
  "node_data":[
@@ -243,6 +244,7 @@ El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos act
     "40:4c:ca:4b:35:a4"
   ],
 "node_list_size": 3
+}
 }
 ```
 ## command
