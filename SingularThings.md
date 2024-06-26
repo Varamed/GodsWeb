@@ -231,7 +231,7 @@ var cmd_get_nodes = {
 ```
 
 
-### Configuration (config)
+### config
 #### DateTime
 Configuración relacionada con la fecha y hora del dispositivo.
 - save: Indica si se guarda la configuración.
@@ -306,15 +306,17 @@ Configuración de la ubicación.
 
 - family_id: ID de la familia de ubicación.
 
-- gps_position: Posición GPS.
+##### gps_position
+Posición GPS.
 
-    - altitude: Altitud GPS.
+- altitude: Altitud GPS.
     
-    - error: Indica si hay un error en la posición GPS.
+- error: Indica si hay un error en la posición GPS.
     
-    - latitude: Latitud GPS.
+- latitude: Latitud GPS.
     
-    - longitude: Longitud GPS.
+- longitude: Longitud GPS.
+
 
 - group_id: ID del grupo.
 
@@ -336,53 +338,56 @@ Configuración de red.
 
 - mesh_channel_switch: Interruptor de cambio de canal de malla.
 
-- mesh_config: Valores detallados en la configuración de malla
+#### mesh_config
+Valores detallados en la configuración de malla
 
-    - assoc_expire_ms: Tiempo de expiración de asociación.
+- assoc_expire_ms: Tiempo de expiración de asociación.
     
-    - attempt_count: Número de intentos de conexión.
+- attempt_count: Número de intentos de conexión.
     
-    - backoff_rssi: Valor de RSSI de retroceso.
+- backoff_rssi: Valor de RSSI de retroceso.
     
-    - beacon_interval_ms: ntervalo de baliza.
+- beacon_interval_ms: ntervalo de baliza.
     
-    - capacity_num: Número de capacidad.
+- capacity_num: Número de capacidad.
     
-    - cnx_rssi: Valor de RSSI de conexión.
+- cnx_rssi: Valor de RSSI de conexión.
     
-    - data_drop_enable: Indicador de habilitación de descarte de datos.
+- data_drop_enable: Indicador de habilitación de descarte de datos.
     
-    - max_connection: Número máximo de conexiones.
+##### max_connection 
+Número máximo de conexiones.
     
-    - max_layer: Máxima capa de red.
+- max_layer: Máxima capa de red.
     
-    - max_layer_deprecated: Capa máxima de red (obsoleta).
+- max_layer_deprecated: Capa máxima de red (obsoleta).
     
-    - monitor_duration_ms: Duración de monitoreo.
+- monitor_duration_ms: Duración de monitoreo.
     
-    - monitor_ie_count: Cantidad de elementos de información de monitoreo.
+- monitor_ie_count: Cantidad de elementos de información de monitoreo.
     
-    - passive_scan_ms: Duración de escaneo pasivo.
+- passive_scan_ms: Duración de escaneo pasivo.
     
-    - retransmit_enable: Indicador de habilitación de retransmisión.
+- retransmit_enable: Indicador de habilitación de retransmisión.
     
-    - root_conflicts_enable: Indicador de habilitación de conflictos de raíz.
+- root_conflicts_enable: Indicador de habilitación de conflictos de raíz.
     
-    - root_healing_ms: Duración de recuperación de raíz.
+- root_healing_ms: Duración de recuperación de raíz.
     
-    - scan_min_count: Cantidad mínima de escaneos.
+- scan_min_count: Cantidad mínima de escaneos.
     
-    - select_rssi: Valor de RSSI de selección.
+- select_rssi: Valor de RSSI de selección.
     
-    - switch_rssi: Valor de RSSI de cambio.
+- switch_rssi: Valor de RSSI de cambio.
     
-    - topology: Topología de red.
+- topology: Topología de red.
     
-    - vote_max_count: Número máximo de votos.
+- vote_max_count: Número máximo de votos.
     
-    - vote_percentage: Porcentaje de votos.
+- vote_percentage: Porcentaje de votos.
     
-    - xon_qsize: Tamaño de la cola XON.
+- xon_qsize: Tamaño de la cola XON.
+  
 
 - mesh_id: ID de la malla.
 
@@ -491,6 +496,7 @@ La sección de State proporciona información en tiempo real sobre el estado ope
 - root_addr: Dirección de la raíz.
 
 #### Sensors
+
 ##### accel
 Datos del acelerómetro.
 
@@ -849,20 +855,35 @@ Es la dirección MAC del dispositivo.
 contiene información detallada sobre un dispositivo específico.
 
 - device_id: Un identificador único para el dispositivo.
+
 - serial_number: El número de serie del dispositivo.
+
 - model: El modelo del dispositivo.
+
 - name: El nombre del dispositivo, que en este caso es el mismo que el modelo.
+
 - token: Un token de seguridad para autenticar el dispositivo.
+
 - atecc_serial_str: El número de serie del chip ATECC (un chip de seguridad).
+
 - firmware_version: La versión del firmware instalado en el dispositivo.
+
 - idf_version: La versión del ESP-IDF (Espressif IoT Development Framework) utilizada.
+
 - idf_datetime: La fecha y hora de compilación del ESP-IDF.
+
 - api_version: La versión de la API utilizada por el dispositivo.
+
 - chip_id: Un identificador del chip utilizado en el dispositivo.
+
 - chip_features: Las características del chip, representadas en un valor numérico.
+
 - chip_revision: La revisión del chip.
+
 - chip_cores: El número de núcleos del chip.
+
 - factory_registered: Indica si el dispositivo ha sido registrado en la fábrica.
+
 - factory_datetime: La fecha y hora de registro en la fábrica.
 
 
@@ -870,15 +891,25 @@ contiene información detallada sobre un dispositivo específico.
 configuración general del dispositivo
 
 - version: La versión de la configuración del dispositivo.
+
 - updated: Indica si la configuración ha sido actualizada recientemente.
+
 - save: Indica si la configuración debe ser guardada.
-- datetime: Configuración relacionada con la fecha y hora del dispositivo.
-    - updated: Indica si la configuración de fecha y hora ha sido actualizada recientemente.
-    - save: Indica si la configuración de fecha y hora debe ser guardada.
-    - sync_to_unixtime: El tiempo UNIX al cual sincronizar.
-    - timezone: La zona horaria del dispositivo.
-    - sync_with_sntp: Indica si debe sincronizarse con un servidor SNTP.
-    - sntp_server: El servidor SNTP para la sincronización de la hora.
+
+#### datetime
+Configuración relacionada con la fecha y hora del dispositivo.
+
+- updated: Indica si la configuración de fecha y hora ha sido actualizada recientemente.
+
+- save: Indica si la configuración de fecha y hora debe ser guardada.
+
+- sync_to_unixtime: El tiempo UNIX al cual sincronizar.
+
+- timezone: La zona horaria del dispositivo.
+
+- sync_with_sntp: Indica si debe sincronizarse con un servidor SNTP.
+
+- sntp_server: El servidor SNTP para la sincronización de la hora.
  
 #### location
 configuración de ubicación del dispositivo
@@ -889,108 +920,187 @@ configuración de ubicación del dispositivo
 - group_id: El ID del grupo de ubicación.
 - family_id: El ID de la familia de ubicación.
 - location_id: El ID de la ubicación específica.
-- location_name: El nombre de la ubicación.
-    - gps_position: : Contiene información de la posición GPS.
-    - error: Indica si hay un error en la posición GPS.
-    - latitude: La latitud de la ubicación.
-    - longitude: La longitud de la ubicación.
-    - altitude: La altitud de la ubicación.
+location_name: El nombre de la ubicación.
+
+##### gps_position
+Contiene información de la posición GPS.
+
+- error: Indica si hay un error en la posición GPS.
+- latitude: La latitud de la ubicación.
+- longitude: La longitud de la ubicación.
+- altitude: La altitud de la ubicación.
  
 #### network
 configuración de red del dispositivo
 
 - updated: Indica si la configuración de red ha sido actualizada recientemente.
+
 - save: Indica si la configuración de red debe ser guardada.
+
 - ping_interval: Intervalo de ping en milisegundos.
+
 - ping_threshold: Umbral de ping antes de considerar la conexión caída.
+
 - wifi_ap_updated: Indica si la configuración del punto de acceso Wi-Fi ha sido actualizada.
+
 - wifi_ap_ssid: El SSID del punto de acceso Wi-Fi.
+
 - wifi_ap_pass: La contraseña del punto de acceso Wi-Fi.
+
 - wifi_ap_authmode: El modo de autenticación del punto de acceso Wi-Fi.
+
 - wifi_ap_channel: El canal del punto de acceso Wi-Fi.
+
 - wifi_sta_updated: Indica si la configuración de la estación Wi-Fi ha sido actualizada.
+
 - wifi_sta_ssid: El SSID de la estación Wi-Fi.
+
 - wifi_sta_pass: La contraseña de la estación Wi-Fi.
+
 - wifi_sta_authmode: El modo de autenticación de la estación Wi-Fi.
+
 - wifi_sta_channel: El canal de la estación Wi-Fi.
+
 - mesh_updated: Indica si la configuración de la red mesh ha sido actualizada.
+
 - mesh_id: El ID de la red mesh.
+
 - mesh_pass: La contraseña de la red mesh.
+
 - mesh_authmode: El modo de autenticación de la red mesh.
+
 - mesh_channel: El canal de la red mesh.
+
 - mesh_channel_switch: Indica si el cambio de canal en la red mesh está habilitado.
+
 - mesh_router_switch: Indica si el cambio de router en la red mesh está habilitado.
+
 - mesh_root_type: El tipo de nodo raíz en la red mesh.
+
 - mesh_node_type: El tipo de nodo en la red mesh.
-- mesh_config:
-    - vote_percentage: Porcentaje de votos requerido para tomar decisiones en la red mesh.
-    - vote_max_count: Número máximo de votos permitidos.
-    - backoff_rssi: Nivel de RSSI para el retroceso.
-    - scan_min_count: Número mínimo de escaneos antes de tomar decisiones.
-    - root_conflicts_enable: Indica si está habilitada la resolución de conflictos de nodos raíz.
-    - root_healing_ms: Tiempo en milisegundos para la curación de nodos raíz.
-    - capacity_num: Número de capacidad para la red mesh.
-    - max_layer_deprecated: Máximo número de capas (obsoleto).
-    - max_connection: Número máximo de conexiones permitidas.
-    - assoc_expire_ms: Tiempo en milisegundos para la expiración de asociaciones.
-    - beacon_interval_ms: Intervalo de beacon en milisegundos.
-    - passive_scan_ms: Duración del escaneo pasivo en milisegundos.
-    - monitor_duration_ms: Duración del monitoreo en milisegundos.
-    - cnx_rssi: Nivel de RSSI para la conexión.
-    - select_rssi: Nivel de RSSI para la selección.
-    - switch_rssi: Nivel de RSSI para el cambio.
-    - attempt_count: Número de intentos permitidos.
-    - monitor_ie_count: Número de IE a monitorear.
-    - xon_qsize: Tamaño de la cola XON.
-    - retransmit_enable: Indica si la retransmisión está habilitada.
-    - data_drop_enable: Indica si el abandono de datos está habilitado.
-    - max_layer: Número máximo de capas permitido.
-    - topology: La topología de la red mesh.
+
+#### mesh_config:
+- vote_percentage: Porcentaje de votos requerido para tomar decisiones en la red mesh.
+
+- vote_max_count: Número máximo de votos permitidos.
+
+- backoff_rssi: Nivel de RSSI para el retroceso.
+
+- scan_min_count: Número mínimo de escaneos antes de tomar decisiones.
+
+- root_conflicts_enable: Indica si está habilitada la resolución de conflictos de nodos raíz.
+
+- root_healing_ms: Tiempo en milisegundos para la curación de nodos raíz.
+
+- capacity_num: Número de capacidad para la red mesh.
+
+- max_layer_deprecated: Máximo número de capas (obsoleto).
+
+- max_connection: Número máximo de conexiones permitidas.
+
+- assoc_expire_ms: Tiempo en milisegundos para la expiración de asociaciones.
+
+- beacon_interval_ms: Intervalo de beacon en milisegundos.
+
+- passive_scan_ms: Duración del escaneo pasivo en milisegundos.
+
+- monitor_duration_ms: Duración del monitoreo en milisegundos.
+
+- cnx_rssi: Nivel de RSSI para la conexión.
+
+- select_rssi: Nivel de RSSI para la selección.
+
+- switch_rssi: Nivel de RSSI para el cambio.
+
+- attempt_count: Número de intentos permitidos.
+
+- monitor_ie_count: Número de IE a monitorear.
+
+- xon_qsize: Tamaño de la cola XON.
+
+- retransmit_enable: Indica si la retransmisión está habilitada.
+
+- data_drop_enable: Indica si el abandono de datos está habilitado.
+
+- max_layer: Número máximo de capas permitido.
+
+- topology: La topología de la red mesh.
   
 #### light
 configuración de la luz del dispositivo, incluyendo los colores, el parpadeo y el modo de reinicio.
 
 - updated: Indica si la configuración de la luz ha sido actualizada recientemente.
+
 - save: Indica si la configuración de la luz debe ser guardada.
+
 - mode: El modo de operación de la luz.
+
 - color: Contiene la configuración del color de la luz.
+
 - error: Indica si hay un error en la configuración del color.
+
 - r: Valor de rojo en la configuración del color.
+
 - g: Valor de verde en la configuración del color.
+
 - b: Valor de azul en la configuración del color.
+
 - w: Valor de blanco en la configuración del color.
+
 - blink_type: El tipo de parpadeo de la luz.
+
 - blink_time: Tiempo de parpadeo en milisegundos.
+
 - blink_duration: Duración del parpadeo en milisegundos.
+
 - blink_color: Contiene la configuración del color del parpadeo.
+
 - blink_color_error: Indica si hay un error en la configuración del color del parpadeo.
+
 - blink_color_r: Valor de rojo en la configuración del color del parpadeo.
+
 - blink_color_g: Valor de verde en la configuración del color del parpadeo.
+
 - blink_color_b: Valor de azul en la configuración del color del parpadeo.
+
 - blink_color_w: Valor de blanco en la configuración del color del parpadeo.
+
 - restart_mode: El modo de operación después de reiniciar.
 
 #### intervals
 configuración de los intervalos de tiempo para diferentes operaciones del dispositivo, como leer, almacenar y enviar datos.
 
 - updated: Indica si la configuración de los intervalos ha sido actualizada recientemente.
+
 - save: Indica si la configuración de los intervalos debe ser guardada.
+
 - read: Intervalo de lectura en milisegundos.
+
 - store: Intervalo de almacenamiento en milisegundos.
+
 - send: Intervalo de envío en milisegundos.
 
 ### state
 estado actual del dispositivo en la red mesh
 
 - mesh: Contiene el estado de la red mesh.
+
 - mesh_init: Indica si la red mesh ha sido inicializada.
+
 - mesh_connected: Indica si el dispositivo está conectado a la red mesh.
+
 - mesh_mac: La dirección MAC del dispositivo en la red mesh.
+
 - mesh_layer: La capa del dispositivo en la red mesh.
+
 - mesh_childs: El número de nodos hijos conectados directamente al dispositivo.
+
 - mesh_childs_total: El número total de nodos hijos en la red mesh.
+
 - mesh_parent_rssi: Nivel de RSSI del nodo padre.
+
 - parent_addr: La dirección del nodo padre en la red mesh.
+
 - root_addr: La dirección del nodo raíz en la red mesh.
 
 
@@ -998,77 +1108,121 @@ estado actual del dispositivo en la red mesh
 Datos recogidos por varios sensores del dispositivo.
 
 - unixtime: Marca de tiempo UNIX actual.
+
 - total_time: Tiempo total de funcionamiento de los sensores en segundos.
+
 - total_errors: Número total de errores detectados por los sensores.
+
 - total_reads: Número total de lecturas realizadas por los sensores.
+
 - total_stores: Número total de almacenamientos realizados por los sensores.
+
 - total_sents: Número total de envíos realizados por los sensores.
+
 #### battery
+
 - error: Indica si hay un error en los datos de la batería.
+
 - is_powered: Indica si el dispositivo está alimentado.
+
 - total_cells: Número total de celdas de la batería.
+
 - input_voltage: Voltaje de entrada en milivoltios.
+
 - input_charge: Carga de entrada en amperios-hora.
+
 - system_voltage: Voltaje del sistema en milivoltios.
+
 - input_current_limit: Límite de corriente de entrada en amperios.
+
 - voltage_per_cell: Voltaje por celda en milivoltios.
+
 - charge_current: Corriente de carga en amperios.
+
 - juntion_temperature: Temperatura de la unión en grados Celsius.
+
 - status0: Estado de la batería (0).
+
 - status1: Estado de la batería (1).
+
 - adc_imon: Corriente medida por el ADC.
+
 - capacity: Capacidad de la batería.
   
 #### ambient
 
 - error: Indica si hay un error en los datos ambientales.
+
 - temperature: Temperatura ambiente en grados Celsius.
+
 - humidity: Humedad ambiente en porcentaje.
+
 - pressure: Presión atmosférica en Pascales.
+
 - altitude: Altitud en metros sobre el nivel del mar.
+
 - air_quality: Calidad del aire.
   
 #### lux_color
 
 - error: Indica si hay un error en los datos de luz y color.
+
 - r: Valor de rojo en la configuración del color.
+
 - g: Valor de verde en la configuración del color.
+
 - b: Valor de azul en la configuración del color.
+
 - w: Valor de blanco en la configuración del color.
 
 #### noise
 
 - error: Indica si hay un error en los datos de ruido.
+
 - raw: Valor crudo del ruido.
+
 - mv: Valor en milivoltios del ruido.
+
 - db: Nivel de decibelios del ruido.
-- 
+  
 #### accel
 
 - error: Indica si hay un error en los datos del acelerómetro.
+
 - x: Aceleración en el eje X.
+
 - y: Aceleración en el eje Y.
+
 - z: Aceleración en el eje Z.
   
 #### gyros
 
 - error: Indica si hay un error en los datos del giroscopio.
+
 - x: Velocidad angular en el eje X.
+
 - y: Velocidad angular en el eje Y.
+
 - z: Velocidad angular en el eje Z.
 
 #### compass
 
 - error: Indica si hay un error en los datos del magnetómetro.
+
 - x: Valor del campo magnético en el eje X.
+
 - y: Valor del campo magnético en el eje Y.
+
 - z: Valor del campo magnético en el eje Z.
 
 #### gps
 
 - error: Indica si hay un error en los datos del GPS.
+
 - latitude: Latitud geográfica.
+
 - longitude: Longitud geográfica.
+
 - altitude: Altitud sobre el nivel del mar.
 
 
@@ -1218,130 +1372,222 @@ var cmd_init = {
 ### device
 
 - device_id: Identificador único del dispositivo.
+
 - serial_number: Número de serie del dispositivo.
+
 - model: Modelo del dispositivo.
+
 - name: Nombre asignado al dispositivo.
+
 - token: Token de seguridad del dispositivo.
+
 - atecc_serial_str: Cadena de número de serie del módulo de seguridad ATECC.
+
 - firmware_version: Versión del firmware actual del dispositivo.
+
 - idf_version: Versión del ESP-IDF (Espressif IoT Development Framework).
+
 - idf_datetime: Fecha y hora de compilación del ESP-IDF.
+
 - api_version: Versión de la API utilizada.
+
 - chip_id: ID del chip principal del dispositivo.
+
 - chip_features: Características específicas del chip.
+
 - chip_revision: Revisión del chip.
+
 - chip_cores: Número de núcleos del chip.
+
 - factory_registered: Indica si el dispositivo está registrado en fábrica.
+
 - factory_datetime: Fecha y hora de registro en fábrica.
   
 ### config
 
 - test_mode: Modo de prueba del dispositivo.
-- datetime
-    - save: Indica si la configuración de fecha y hora se guarda.
-    - sync_to_unixtime: Hora Unix a la que se sincroniza el dispositivo.
-    - timezone: Zona horaria configurada para el dispositivo.
-    - sync_with_sntp: Indica si el dispositivo se sincroniza con un servidor SNTP.
-    - sntp_server: Servidor SNTP utilizado para la sincronización de hora.
-    - unixtime: Hora Unix actual del dispositivo.
-    - datetime: Fecha y hora actual del dispositivo.
+- 
+#### datetime
+- save: Indica si la configuración de fecha y hora se guarda.
+
+- sync_to_unixtime: Hora Unix a la que se sincroniza el dispositivo.
+
+- timezone: Zona horaria configurada para el dispositivo.
+
+- sync_with_sntp: Indica si el dispositivo se sincroniza con un servidor SNTP.
+
+- sntp_server: Servidor SNTP utilizado para la sincronización de hora.
+
+- unixtime: Hora Unix actual del dispositivo.
+
+- datetime: Fecha y hora actual del dispositivo.
 
 #### location
 
 save: Indica si la configuración de ubicación se guarda.
+
 category_id: ID de la categoría de ubicación.
+
 group_id: ID del grupo de ubicación.
+
 family_id: ID de la familia de ubicación.
+
 location_id: ID de la ubicación.
 
 #### gps_position
 
 - error: Indica si hay un error en los datos del GPS.
+
 - latitude: Latitud actual del dispositivo.
+
 - longitude: Longitud actual del dispositivo.
+
 - altitude: Altitud actual del dispositivo.
 
 #### network
 
 - save: Indica si la configuración de red se guarda.
+
 - ping_interval: Intervalo de tiempo entre pings en milisegundos.
+
 - ping_threshold: Umbral de pings fallidos antes de considerar que hay un problema.
+
 - wifi_ap_ssid: SSID del punto de acceso WiFi del dispositivo.
+
 - wifi_ap_pass: Contraseña del punto de acceso WiFi del dispositivo.
+
 - wifi_ap_authmode: Modo de autenticación del punto de acceso WiFi.
+
 - wifi_ap_channel: Canal del punto de acceso WiFi.
+
 - wifi_sta_ssid: SSID de la red WiFi a la que se conecta el dispositivo.
+
 - wifi_sta_pass: Contraseña de la red WiFi a la que se conecta el dispositivo.
+
 - wifi_sta_authmode: Modo de autenticación de la red WiFi a la que se conecta el dispositivo.
+
 - wifi_sta_channel: Canal de la red WiFi a la que se conecta el dispositivo.
+
 - mesh_id: Identificador de la red Mesh.
+
 - mesh_pass: Contraseña de la red Mesh.
+
 - mesh_authmode: Modo de autenticación de la red Mesh.
+
 - mesh_channel: Canal de la red Mesh.
+
 - mesh_channel_switch: Indica si la conmutación de canal Mesh está activada.
+
 - mesh_router_switch: Indica si la conmutación de enrutador Mesh está activada.
+
 - mesh_root_type: Tipo de nodo raíz en la red Mesh.
+
 - mesh_node_type: Tipo de nodo en la red Mesh.
 
 #### intervals_bridge
 
 - save: Indica si los intervalos del puente se guardan.
+
 - read: Intervalo de lectura en milisegundos.
+
 - store: Intervalo de almacenamiento en milisegundos.
+
 - send: Intervalo de envío en milisegundos.
 
 #### intervals_node
 
 - save: Indica si los intervalos del nodo se guardan.
+
 - read: Intervalo de lectura en milisegundos.
+
 - store: Intervalo de almacenamiento en milisegundos.
+
 - send: Intervalo de envío en milisegundos.
 
 #### server
 
 - https_active: Indica si el servidor HTTPS está activo.
+
 - task_stack_size: Tamaño de la pila de tareas del servidor.
+
 - task_priority: Prioridad de la tarea del servidor.
+
 - task_core_id: ID del núcleo en el que se ejecuta la tarea del servidor.
+
 - recv_wait_timeout: Tiempo de espera para recibir datos en milisegundos.
+
 - send_wait_timeout: Tiempo de espera para enviar datos en milisegundos.
 
 ### state
 
 - current_millis: Tiempo actual en milisegundos.
+
 - last_millis: Último tiempo registrado en milisegundos.
+
 - unixtime: Tiempo Unix actual.
+
 - unixtime_synced: Indica si el tiempo Unix está sincronizado.
+
 - is_gpio_init: Indica si la inicialización GPIO está completa.
+
 - is_i2c_init: Indica si la inicialización I2C está completa.
+
 - is_spi_init: Indica si la inicialización SPI está completa.
+
 - is_nvs_init: Indica si la inicialización NVS (Non-Volatile Storage) está completa.
+
 - is_lfs_pub_init: Indica si la inicialización de LFS (Little File System) pública está completa.
+
 - is_lfs_prv_init: Indica si la inicialización de LFS privada está completa.
+
 - is_tcpip_init: Indica si la inicialización de TCP/IP está completa.
+
 - is_netbios_init: Indica si la inicialización de NetBIOS está completa.
+
 - is_mdns_init: Indica si la inicialización de mDNS está completa.
+
 - is_sntp_init: Indica si la inicialización de SNTP (Simple Network Time Protocol) está completa.
+
 - is_ws_started: Indica si el servicio WebSocket está iniciado.
+
 - is_ws_https: Indica si el servicio WebSocket está utilizando HTTPS.
+
 - eth_init: Indica si la interfaz Ethernet está inicializada.
+
 - eth_connected: Indica si la interfaz Ethernet está conectada.
+
 - eth_clients: Número de clientes conectados a través de Ethernet.
+
 - eth_mac: Dirección MAC de la interfaz Ethernet.
+
 - eth_state: Estado de la interfaz Ethernet.
+
 - eth_has_internet: Indica si la interfaz Ethernet tiene conexión a Internet.
+
 - wifi_sta_init: Indica si la inicialización de la estación WiFi está completa.
+
 - wifi_sta_connected: Indica si la estación WiFi está conectada.
+
 - wifi_sta_retry_num: Número de intentos de conexión WiFi.
+
 - wifi_sta_clients: Número de clientes conectados a la estación WiFi.
+
 - wifi_sta_mac: Dirección MAC de la estación WiFi.
+
 - wifi_sta_state: Estado de la estación WiFi.
+
 - wifi_ap_init: Indica si la inicialización del punto de acceso WiFi está completa.
+
 - wifi_ap_connected: Indica si el punto de acceso WiFi está conectado.
+
 - wifi_ap_countdown: Contador para el punto de acceso WiFi.
+
 - wifi_ap_clients: Número de clientes conectados al punto de acceso WiFi.
+
 - wifi_ap_mac: Dirección MAC del punto de acceso WiFi.
+
 - wifi_ap_state: Estado del punto de acceso WiFi.
+
 - bt_mac: Dirección MAC del dispositivo Bluetooth.
   
 ## set-network
