@@ -1,7 +1,14 @@
 # Conexión de nodo WebSocket
 
-Este documento ofrece un resumen de la configuración y la estructura de estado para una aplicación basada en WebSocket. Las configuraciones y estados están organizados en categorías como config, intervals, light, location, network, device y state. Cada categoría contiene varios parámetros que definen los ajustes y el estado operativo de los nodos.
+Este documento ofrece un resumen de la configuración y la estructura de estado para la conexión por WebSocket a los nodos. Las configuraciones y estados están organizados en categorías como config, intervals, light, location, network, device y state. Cada categoría contiene varios parámetros que definen los ajustes y el estado operativo de los nodos.
 
+# Comandos
+
+1. [get-nodes](##get-nodes)
+2. [get-node](##get-node)
+3. [init](##init)
+4. [set-network](##set-network)
+   
 ## get-nodes
 
 El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos actualmente alimentados en la red. Este comando es esencial para los administradores de red para obtener una visión general de los dispositivos activos y sus estados. Cuando se envía este comando, el servidor responde con detalles sobre cada nodo alimentado, incluyendo su configuración y estado actual.
@@ -236,6 +243,7 @@ configuración general del dispositivo
 
 #### DateTime
 Configuración relacionada con la fecha y hora del dispositivo.
+
 - save: Indica si se guarda la configuración.
   
 - sntp_server: Servidor SNTP utilizado para la sincronización de tiempo.
@@ -283,6 +291,7 @@ Configuración de la luz o iluminación.
 - blink_type: Tipo de parpadeo.
 
 - color: Configuración del color de la luz.
+  
      - b: Valor de azul para la luz.
 
      - error: Indica si hay un error en el color de la luz.
@@ -342,52 +351,53 @@ Configuración de red.
 #### mesh_config
 Valores detallados en la configuración de malla
 
-- assoc_expire_ms: Tiempo de expiración de asociación.
+ - assoc_expire_ms: Tiempo de expiración de asociación.
     
-- attempt_count: Número de intentos de conexión.
+ - attempt_count: Número de intentos de conexión.
     
-- backoff_rssi: Valor de RSSI de retroceso.
+ - backoff_rssi: Valor de RSSI de retroceso.
     
-- beacon_interval_ms: ntervalo de baliza.
+ - beacon_interval_ms: ntervalo de baliza.
     
-- capacity_num: Número de capacidad.
+ - capacity_num: Número de capacidad.
     
-- cnx_rssi: Valor de RSSI de conexión.
+ - cnx_rssi: Valor de RSSI de conexión.
     
-- data_drop_enable: Indicador de habilitación de descarte de datos.
+ - data_drop_enable: Indicador de habilitación de descarte de datos.
     
-- max_connection: Número máximo de conexiones.
+ - max_connection: Número máximo de conexiones.
     
-- max_layer: Máxima capa de red.
+ - max_layer: Máxima capa de red.
     
-- max_layer_deprecated: Capa máxima de red (obsoleta).
+ - max_layer_deprecated: Capa máxima de red (obsoleta).
     
-- monitor_duration_ms: Duración de monitoreo.
+ - monitor_duration_ms: Duración de monitoreo.
     
-- monitor_ie_count: Cantidad de elementos de información de monitoreo.
+ - monitor_ie_count: Cantidad de elementos de información de monitoreo.
     
-- passive_scan_ms: Duración de escaneo pasivo.
+ - passive_scan_ms: Duración de escaneo pasivo.
     
-- retransmit_enable: Indicador de habilitación de retransmisión.
+ - retransmit_enable: Indicador de habilitación de retransmisión.
     
-- root_conflicts_enable: Indicador de habilitación de conflictos de raíz.
+ - root_conflicts_enable: Indicador de habilitación de conflictos de raíz.
     
-- root_healing_ms: Duración de recuperación de raíz.
+ - root_healing_ms: Duración de recuperación de raíz.
     
-- scan_min_count: Cantidad mínima de escaneos.
+ - scan_min_count: Cantidad mínima de escaneos.
     
-- select_rssi: Valor de RSSI de selección.
+ - select_rssi: Valor de RSSI de selección.
     
-- switch_rssi: Valor de RSSI de cambio.
+ - switch_rssi: Valor de RSSI de cambio.
     
-- topology: Topología de red.
+ - topology: Topología de red.
     
-- vote_max_count: Número máximo de votos.
+ - vote_max_count: Número máximo de votos.
     
-- vote_percentage: Porcentaje de votos.
+ - vote_percentage: Porcentaje de votos.
     
-- xon_qsize: Tamaño de la cola XON.
-  
+ - xon_qsize: Tamaño de la cola XON.
+
+
 
 - mesh_id: ID de la malla.
 
@@ -429,11 +439,11 @@ Valores detallados en la configuración de malla
 
 - wifi_sta_updated: Indica si la configuración de la estación WiFi ha sido actualizada.
 
-- save: indica si la configuración correspondiente se debe guardar o no.
+- save: Indica si la configuración correspondiente se debe guardar o no.
 
-- update: indica si ha habido una actualización reciente en la configuración.
+- update: Indica si ha habido una actualización reciente en la configuración.
 
-- version:Versión de la configuración de red.
+- version: Versión de la configuración de red.
 
 ### Device
 La sección de Device proporciona información sobre el hardware y software del dispositivo.
@@ -577,7 +587,8 @@ Datos del GPS.
 
 -longitude: Longitud.
 
-##### gyros: Datos del giroscopio.
+##### gyros
+Datos del giroscopio.
     
 - error: Indicador de error.
 
@@ -1419,6 +1430,7 @@ var cmd_init = {
 - test_mode: Modo de prueba del dispositivo.
   
 #### datetime
+
 - save: Indica si la configuración de fecha y hora se guarda.
 
 - sync_to_unixtime: Hora Unix a la que se sincroniza el dispositivo.
@@ -1497,7 +1509,7 @@ var cmd_init = {
 
 #### intervals_bridge
 
-- save: Indica si los intervalos del puente se guardan.
+- save: Indica si los intervalos del bridge se guardan.
 
 - read: Intervalo de lectura en milisegundos.
 
@@ -1602,4 +1614,100 @@ var cmd_init = {
 - bt_mac: Dirección MAC del dispositivo Bluetooth.
   
 ## set-network
+El comando `set-network` tiene como objetivo actualizar la configuración de red. La función valida y procesa cada campo de configuración individualmente, actualizando la configuración interna si los datos son válidos. El JSON devuelto consistirá en booleanos que indican si cada valor ha sido modificado dentro de la configuración.
 
+**command y data**
+```javascript
+ var cmd_set_network = {
+    
+      command: 'set-network',
+      data: {
+          save: true,
+          ping_interval: 30,
+          ping_threshold: 5,
+          wifi_ap_ssid: "MySSID",
+          wifi_ap_pass: "MyPassword",
+          wifi_ap_authmode: 3,
+          wifi_ap_channel: 6,
+          wifi_sta_ssid: "MySSID",
+          wifi_sta_pass: "MyPassword",
+          wifi_sta_authmode: 3,
+          wifi_sta_channel: 11,
+          mesh_id: "123456",
+          mesh_pass: "MeshPassword",
+          mesh_authmode: 3,
+          mesh_channel: 1,
+          mesh_channel_switch: 3,
+          mesh_backoff_rssi: -80,
+          mesh_max_capacity: 10,
+          mesh_max_connection: 5,
+          mesh_max_layer: 3
+      }
+  
+  }
+```
+**Ejemplo de respuesta JSON**
+```json 
+{
+          save: true,
+          ping_interval: true,
+          ping_threshold: true,
+          wifi_ap_ssid: true,
+          wifi_ap_pass: true,
+          wifi_ap_authmode: true,
+          wifi_ap_channel: true,
+          wifi_sta_ssid: true,
+          wifi_sta_pass: true,
+          wifi_sta_authmode: true,
+          wifi_sta_channel: true,
+          mesh_id: true,
+          mesh_pass: true,
+          mesh_authmode: true,
+          mesh_channel: true,
+          mesh_channel_switch: true,
+          mesh_backoff_rssi: true,
+          mesh_max_capacity: true,
+          mesh_max_connection: true,
+          mesh_max_layer: true
+      }
+```
+### data
+- save: Indica si se debe guardar la configuración actualizada.
+  
+- ping_interval: Intervalo de tiempo en segundos entre los pings de mantenimiento de red.
+  
+- ping_threshold: Umbral mínimo de ping para considerar que la conexión está estable.
+
+- wifi_ap_ssid: Nombre del SSID para el punto de acceso Wi-Fi.
+
+- wifi_ap_pass: Contraseña del punto de acceso Wi-Fi.
+
+- wifi_ap_authmode: Modo de autenticación del punto de acceso Wi-Fi.
+
+- wifi_ap_channel: Canal de transmisión del punto de acceso Wi-Fi.
+
+- wifi_sta_ssid: Nombre del SSID para la estación Wi-Fi (cliente).
+
+- wifi_sta_pass: Contraseña para la conexión como estación Wi-Fi.
+
+- wifi_sta_authmode: Modo de autenticación para la conexión como estación Wi-Fi.
+
+- wifi_sta_channel: Canal de transmisión para la conexión como estación Wi-Fi.
+
+- mesh_id: Identificador único para la red mesh.
+
+- mesh_pass: Contraseña para la red mesh.
+
+- mesh_authmode: Modo de autenticación para la red mesh.
+
+- mesh_channel: Canal de transmisión para la red mesh.
+
+- mesh_channel_switch: Configuración de cambio de canal para la red mesh.
+
+- mesh_backoff_rssi: Valor de RSSI de retroceso para la red mesh.
+
+- mesh_max_capacity: Capacidad máxima de la red mesh.
+
+- mesh_max_connection: Número máximo de conexiones simultáneas en la red mesh.
+
+- mesh_max_layer: Número máximo de capas en la red mesh.
