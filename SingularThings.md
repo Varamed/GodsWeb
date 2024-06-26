@@ -240,7 +240,7 @@ El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos act
 "node_list": [
     "40:4c:ca:45:1e:08",
     "40:4c:ca:4b:35:a4"
-  ]
+  ],
 "node_list_size": 3
 }
 ```
