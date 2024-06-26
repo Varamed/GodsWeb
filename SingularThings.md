@@ -1650,27 +1650,27 @@ El comando `set-network` tiene como objetivo actualizar la configuración de red
 **Ejemplo de respuesta JSON**
 ```json 
 {
-          save: true,
-          ping_interval: true,
-          ping_threshold: true,
-          wifi_ap_ssid: true,
-          wifi_ap_pass: true,
-          wifi_ap_authmode: true,
-          wifi_ap_channel: true,
-          wifi_sta_ssid: true,
-          wifi_sta_pass: true,
-          wifi_sta_authmode: true,
-          wifi_sta_channel: true,
-          mesh_id: true,
-          mesh_pass: true,
-          mesh_authmode: true,
-          mesh_channel: true,
-          mesh_channel_switch: true,
-          mesh_backoff_rssi: true,
-          mesh_max_capacity: true,
-          mesh_max_connection: true,
-          mesh_max_layer: true
-      }
+  "save": true,
+  "ping_interval": true,
+  "ping_threshold": true,
+  "wifi_ap_ssid": true,
+  "wifi_ap_pass": true,
+  "wifi_ap_authmode": true,
+  "wifi_ap_channel": true,
+  "wifi_sta_ssid": true,
+  "wifi_sta_pass": true,
+  "wifi_sta_authmode": true,
+  "wifi_sta_channel": true,
+  "mesh_id": true,
+  "mesh_pass": true,
+  "mesh_authmode": true,
+  "mesh_channel": true,
+  "mesh_channel_switch": true,
+  "mesh_backoff_rssi": true,
+  "mesh_max_capacity": true,
+  "mesh_max_connection": true,
+  "mesh_max_layer": true
+}
 ```
 ### data
 - save: Indica si se debe guardar la configuración actualizada.
