@@ -4,10 +4,10 @@ Este documento ofrece un resumen de la configuración y la estructura de estado 
 
 # Comandos
 
-1. [get-nodes](##get-nodes)
-2. [get-node](##get-node)
-3. [init](##init)
-4. [set-network](##set-network)
+1. [get-nodes](#get-nodes)
+2. [get-node](#get-node)
+3. [init](#init)
+4. [set-network](#set-network)
    
 ## get-nodes
 
