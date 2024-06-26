@@ -661,6 +661,12 @@ Es un número que indica la cantidad de elementos en node_list (contando el brid
 
 
 
+
+
+
+
+
+
 ## get-node
 El comando `get-node` se utiliza para obtener información detallada sobre un nodo específico en la red mediante su dirección MAC única. Este comando es fundamental para recopilar datos exhaustivos sobre un dispositivo IoT particular, incluyendo detalles como el ID del dispositivo, número de serie (si está disponible), configuración de red específica, estado operativo actual (como su capa en una red de malla), y otros parámetros relevantes.
 
