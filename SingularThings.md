@@ -245,10 +245,13 @@ El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos act
 "node_list_size": 3
 }
 ```
-### command
+## command
+acción realizada.
 
-### data
-  ### node_data
+## data
+Datos de todos los nodos visibles
+  
+### node_data
 #### config
 configuración general del dispositivo
 
