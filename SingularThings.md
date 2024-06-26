@@ -1105,7 +1105,8 @@ configuración de los intervalos de tiempo para diferentes operaciones del dispo
 ### state
 estado actual del dispositivo en la red mesh
 
-- mesh: Contiene el estado de la red mesh.
+#### mesh
+estado actual del dispositivo en la red mesh.
 
 - mesh_init: Indica si la red mesh ha sido inicializada.
 
@@ -1126,7 +1127,7 @@ estado actual del dispositivo en la red mesh
 - root_addr: La dirección del nodo raíz en la red mesh.
 
 
-### sensors
+#### sensors
 Datos recogidos por varios sensores del dispositivo.
 
 - unixtime: Marca de tiempo UNIX actual.
@@ -1141,7 +1142,7 @@ Datos recogidos por varios sensores del dispositivo.
 
 - total_sents: Número total de envíos realizados por los sensores.
 
-#### battery
+##### battery
 
 - error: Indica si hay un error en los datos de la batería.
 
@@ -1171,7 +1172,7 @@ Datos recogidos por varios sensores del dispositivo.
 
 - capacity: Capacidad de la batería.
   
-#### ambient
+##### ambient
 
 - error: Indica si hay un error en los datos ambientales.
 
@@ -1185,7 +1186,7 @@ Datos recogidos por varios sensores del dispositivo.
 
 - air_quality: Calidad del aire.
   
-#### lux_color
+##### lux_color
 
 - error: Indica si hay un error en los datos de luz y color.
 
@@ -1197,7 +1198,7 @@ Datos recogidos por varios sensores del dispositivo.
 
 - w: Valor de blanco en la configuración del color.
 
-#### noise
+##### noise
 
 - error: Indica si hay un error en los datos de ruido.
 
@@ -1207,7 +1208,7 @@ Datos recogidos por varios sensores del dispositivo.
 
 - db: Nivel de decibelios del ruido.
   
-#### accel
+##### accel
 
 - error: Indica si hay un error en los datos del acelerómetro.
 
@@ -1217,7 +1218,7 @@ Datos recogidos por varios sensores del dispositivo.
 
 - z: Aceleración en el eje Z.
   
-#### gyros
+##### gyros
 
 - error: Indica si hay un error en los datos del giroscopio.
 
@@ -1227,7 +1228,7 @@ Datos recogidos por varios sensores del dispositivo.
 
 - z: Velocidad angular en el eje Z.
 
-#### compass
+##### compass
 
 - error: Indica si hay un error en los datos del magnetómetro.
 
@@ -1237,7 +1238,7 @@ Datos recogidos por varios sensores del dispositivo.
 
 - z: Valor del campo magnético en el eje Z.
 
-#### gps
+##### gps
 
 - error: Indica si hay un error en los datos del GPS.
 
