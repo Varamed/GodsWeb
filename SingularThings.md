@@ -671,219 +671,220 @@ El comando `get-node` se utiliza para obtener información detallada sobre un no
 **Ejemplo de respuesta JSON**
 ```json
 {
-"command": "get-node"
-"data":{
-  "mac_address": "40:4c:ca:45:1e:08",
-  "device": {
-    "device_id": 0,
-    "serial_number": "",
-    "model": "ST-INE-002-004",
-    "name": "ST-INE-002-004",
-    "token": "",
-    "atecc_serial_str": "",
-    "firmware_version": "1.0.2",
-    "idf_version": "v5.2.2-185-g018409d99b",
-    "idf_datetime": "Jun 25 2024 - 09:42:41",
-    "api_version": 12596,
-    "chip_id": 13,
-    "chip_features": 82,
-    "chip_revision": 0,
-    "chip_cores": 1,
-    "factory_registered": false,
-    "factory_datetime": ""
-  },
-  "config": {
-    "version": 1,
-    "updated": true,
-    "save": true,
-    "datetime": {
+  "command": "get-node",
+  "data": {
+    "mac_address": "40:4c:ca:45:1e:08",
+    "device": {
+      "device_id": 0,
+      "serial_number": "",
+      "model": "ST-INE-002-004",
+      "name": "ST-INE-002-004",
+      "token": "",
+      "atecc_serial_str": "",
+      "firmware_version": "1.0.2",
+      "idf_version": "v5.2.2-185-g018409d99b",
+      "idf_datetime": "Jun 25 2024 - 09:42:41",
+      "api_version": 12596,
+      "chip_id": 13,
+      "chip_features": 82,
+      "chip_revision": 0,
+      "chip_cores": 1,
+      "factory_registered": false,
+      "factory_datetime": ""
+    },
+    "config": {
+      "version": 1,
       "updated": true,
       "save": true,
-      "sync_to_unixtime": 0,
-      "timezone": "CET-1CEST,M3.5.0,M10.5.0/3",
-      "sync_with_sntp": false,
-      "sntp_server": "pool.ntp.org"
-    },
-    "location": {
-      "updated": false,
-      "save": true,
-      "category_id": 0,
-      "group_id": 0,
-      "family_id": 0,
-      "location_id": 0,
-      "location_name": "",
-      "gps_position": {
-        "error": false,
-        "latitude": 0,
-        "longitude": 0,
-        "altitude": 0
+      "datetime": {
+        "updated": true,
+        "save": true,
+        "sync_to_unixtime": 0,
+        "timezone": "CET-1CEST,M3.5.0,M10.5.0/3",
+        "sync_with_sntp": false,
+        "sntp_server": "pool.ntp.org"
+      },
+      "location": {
+        "updated": false,
+        "save": true,
+        "category_id": 0,
+        "group_id": 0,
+        "family_id": 0,
+        "location_id": 0,
+        "location_name": "",
+        "gps_position": {
+          "error": false,
+          "latitude": 0,
+          "longitude": 0,
+          "altitude": 0
+        }
+      },
+      "network": {
+        "updated": true,
+        "save": true,
+        "ping_interval": 15000,
+        "ping_threshold": 3,
+        "wifi_ap_updated": false,
+        "wifi_ap_ssid": "BridgeAP",
+        "wifi_ap_pass": "password",
+        "wifi_ap_authmode": 6,
+        "wifi_ap_channel": 11,
+        "wifi_sta_updated": false,
+        "wifi_sta_ssid": "TP-Link_C49C",
+        "wifi_sta_pass": "8165044699",
+        "wifi_sta_authmode": 6,
+        "wifi_sta_channel": 11,
+        "mesh_updated": false,
+        "mesh_id": "999999",
+        "mesh_pass": "password",
+        "mesh_authmode": 6,
+        "mesh_channel": 11,
+        "mesh_channel_switch": 0,
+        "mesh_router_switch": 0,
+        "mesh_root_type": 1,
+        "mesh_node_type": 2,
+        "mesh_config": {
+          "vote_percentage": 90,
+          "vote_max_count": 15,
+          "backoff_rssi": -98,
+          "scan_min_count": 10,
+          "root_conflicts_enable": false,
+          "root_healing_ms": 6000,
+          "capacity_num": 100,
+          "max_layer_deprecated": 0,
+          "max_connection": 10,
+          "assoc_expire_ms": 30000,
+          "beacon_interval_ms": 100,
+          "passive_scan_ms": 300,
+          "monitor_duration_ms": 30000,
+          "cnx_rssi": -118,
+          "select_rssi": -78,
+          "switch_rssi": -98,
+          "attempt_count": 30,
+          "monitor_ie_count": 10,
+          "xon_qsize": 64,
+          "retransmit_enable": true,
+          "data_drop_enable": true,
+          "max_layer": 101,
+          "topology": 1
+        }
+      },
+      "light": {
+        "updated": false,
+        "save": true,
+        "mode": 0,
+        "color": {
+          "error": false,
+          "r": 255,
+          "g": 255,
+          "b": 255,
+          "w": 255
+        },
+        "blink_type": 0,
+        "blink_time": 500,
+        "blink_duration": 500,
+        "blink_color": {
+          "blink_color_error": false,
+          "blink_color_r": 255,
+          "blink_color_g": 255,
+          "blink_color_b": 255,
+          "blink_color_w": 255
+        },
+        "restart_mode": 1
+      },
+      "intervals": {
+        "updated": true,
+        "save": true,
+        "read": 5000,
+        "store": 60000,
+        "send": 30000
       }
     },
-    "network": {
-      "updated": true,
-      "save": true,
-      "ping_interval": 15000,
-      "ping_threshold": 3,
-      "wifi_ap_updated": false,
-      "wifi_ap_ssid": "BridgeAP",
-      "wifi_ap_pass": "password",
-      "wifi_ap_authmode": 6,
-      "wifi_ap_channel": 11,
-      "wifi_sta_updated": false,
-      "wifi_sta_ssid": "TP-Link_C49C",
-      "wifi_sta_pass": "8165044699",
-      "wifi_sta_authmode": 6,
-      "wifi_sta_channel": 11,
-      "mesh_updated": false,
-      "mesh_id": "999999",
-      "mesh_pass": "password",
-      "mesh_authmode": 6,
-      "mesh_channel": 11,
-      "mesh_channel_switch": 0,
-      "mesh_router_switch": 0,
-      "mesh_root_type": 1,
-      "mesh_node_type": 2,
-      "mesh_config": {
-        "vote_percentage": 90,
-        "vote_max_count": 15,
-        "backoff_rssi": -98,
-        "scan_min_count": 10,
-        "root_conflicts_enable": false,
-        "root_healing_ms": 6000,
-        "capacity_num": 100,
-        "max_layer_deprecated": 0,
-        "max_connection": 10,
-        "assoc_expire_ms": 30000,
-        "beacon_interval_ms": 100,
-        "passive_scan_ms": 300,
-        "monitor_duration_ms": 30000,
-        "cnx_rssi": -118,
-        "select_rssi": -78,
-        "switch_rssi": -98,
-        "attempt_count": 30,
-        "monitor_ie_count": 10,
-        "xon_qsize": 64,
-        "retransmit_enable": true,
-        "data_drop_enable": true,
-        "max_layer": 101,
-        "topology": 1
-      }
-    },
-    "light": {
-      "updated": false,
-      "save": true,
-      "mode": 0,
-      "color": {
-        "error": false,
-        "r": 255,
-        "g": 255,
-        "b": 255,
-        "w": 255
+    "state": {
+      "mesh": {
+        "mesh_init": true,
+        "mesh_connected": true,
+        "mesh_mac": "39:39:39:39:39:39",
+        "mesh_layer": 2,
+        "mesh_childs": 0,
+        "mesh_childs_total": 0,
+        "mesh_parent_rssi": -32,
+        "parent_addr": "01:30:75:8a:b2:9e",
+        "root_addr": "30:c9:22:9b:c7:e1"
       },
-      "blink_type": 0,
-      "blink_time": 500,
-      "blink_duration": 500,
-      "blink_color": {
-        "blink_color_error": false,
-        "blink_color_r": 255,
-        "blink_color_g": 255,
-        "blink_color_b": 255,
-        "blink_color_w": 255
-      },
-      "restart_mode": 1
-    },
-    "intervals": {
-      "updated": true,
-      "save": true,
-      "read": 5000,
-      "store": 60000,
-      "send": 30000
-    }
-  },
-  "state": {
-    "mesh": {
-      "mesh_init": true,
-      "mesh_connected": true,
-      "mesh_mac": "39:39:39:39:39:39",
-      "mesh_layer": 2,
-      "mesh_childs": 0,
-      "mesh_childs_total": 0,
-      "mesh_parent_rssi": -32,
-      "parent_addr": "01:30:75:8a:b2:9e",
-      "root_addr": "30:c9:22:9b:c7:e1"
-    },
-   "sensors": {
-      "unixtime": 1719314604,
-      "total_time": 12,
-      "total_errors": 2,
-      "total_reads": 0,
-      "total_stores": 0,
-      "total_sents": 0,
-      "battery": {
-        "error": false,
-        "is_powered": true,
-        "total_cells": 2,
-        "input_voltage": 11960,
-        "input_charge": 118.75,
-        "system_voltage": 8340,
-        "input_current_limit": 800,
-        "voltage_per_cell": 3595,
-        "charge_current": 0,
-        "juntion_temperature": 41.39659881591797,
-        "status0": 27136,
-        "status1": 32,
-        "adc_imon": 11,
-        "capacity": 0
-      },
-      "ambient": {
-        "error": false,
-        "temperature": 0,
-        "humidity": 0,
-        "pressure": 0,
-        "altitude": 0,
-        "air_quality": 0
-      },
-      "lux_color": {
-        "error": false,
-        "r": 255,
-        "g": 255,
-        "b": 255,
-        "w": 255
-      },
-      "noise": {
-        "error": false,
-        "raw": 0,
-        "mv": 0,
-        "db": 0
-      },
-      "accel": {
-        "error": false,
-        "x": -0.034404002130031586,
-        "y": -0.28255200386047363,
-        "z": 0.963312029838562
-      },
-      "gyros": {
-        "error": false,
-        "x": 0,
-        "y": 0,
-        "z": 0
-      },
-      "compass": {
-        "error": false,
-        "x": 0,
-        "y": 0,
-        "z": 0
-      },
-      "gps": {
-        "error": false,
-        "latitude": 0,
-        "longitude": 0,
-        "altitude": 0
+      "sensors": {
+        "unixtime": 1719314604,
+        "total_time": 12,
+        "total_errors": 2,
+        "total_reads": 0,
+        "total_stores": 0,
+        "total_sents": 0,
+        "battery": {
+          "error": false,
+          "is_powered": true,
+          "total_cells": 2,
+          "input_voltage": 11960,
+          "input_charge": 118.75,
+          "system_voltage": 8340,
+          "input_current_limit": 800,
+          "voltage_per_cell": 3595,
+          "charge_current": 0,
+          "juntion_temperature": 41.39659881591797,
+          "status0": 27136,
+          "status1": 32,
+          "adc_imon": 11,
+          "capacity": 0
+        },
+        "ambient": {
+          "error": false,
+          "temperature": 0,
+          "humidity": 0,
+          "pressure": 0,
+          "altitude": 0,
+          "air_quality": 0
+        },
+        "lux_color": {
+          "error": false,
+          "r": 255,
+          "g": 255,
+          "b": 255,
+          "w": 255
+        },
+        "noise": {
+          "error": false,
+          "raw": 0,
+          "mv": 0,
+          "db": 0
+        },
+        "accel": {
+          "error": false,
+          "x": -0.034404002130031586,
+          "y": -0.28255200386047363,
+          "z": 0.963312029838562
+        },
+        "gyros": {
+          "error": false,
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "compass": {
+          "error": false,
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "gps": {
+          "error": false,
+          "latitude": 0,
+          "longitude": 0,
+          "altitude": 0
+        }
       }
     }
   }
 }
-}
+
 ```
 ## data
 
