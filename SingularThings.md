@@ -682,6 +682,8 @@ El comando `get-node` se utiliza para obtener información detallada sobre un no
 **Ejemplo de respuesta JSON**
 ```json
 {
+"command": "get-node"
+"data":{
   "mac_address": "40:4c:ca:45:1e:08",
   "device": {
     "device_id": 0,
@@ -892,7 +894,9 @@ El comando `get-node` se utiliza para obtener información detallada sobre un no
     }
   }
 }
+}
 ```
+## data
 ### mac_address
 Es la dirección MAC del dispositivo.
 
@@ -1302,6 +1306,8 @@ Datos recogidos por varios sensores del dispositivo.
 **Ejemplo de respuesta JSON**
 ```json
 {
+"command": "init-success"
+"data":{
   "device": {
     "device_id": 114,
     "serial_number": "0450-D0B7-7017-DC22",
@@ -1424,7 +1430,10 @@ Datos recogidos por varios sensores del dispositivo.
     "bt_mac": "30:c9:22:9b:c7:e2"
   }
 }
+}
 ```
+## data 
+
 ### device
 
 - device_id: Identificador único del dispositivo.
