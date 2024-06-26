@@ -26,131 +26,132 @@ Este documento ofrece un resumen de la configuración y la estructura de estado 
 **Ejemplo de respuesta JSON**
 ```json
 {
-"command": "init-success"
-"data":{
-  "device": {
-    "device_id": 114,
-    "serial_number": "0450-D0B7-7017-DC22",
-    "model": "ST-INE-003-002",
-    "name": "Visualfy Bridge",
-    "token": "1c62ef10f4a492b8638c5169359b54aa95984296c2b2149cb7b18441d1352fab",
-    "atecc_serial_str": "",
-    "firmware_version": "1.0.4",
-    "idf_version": "v5.2.2-185-g018409d99b",
-    "idf_datetime": "",
-    "api_version": 1,
-    "chip_id": 1,
-    "chip_features": 50,
-    "chip_revision": 301,
-    "chip_cores": 2,
-    "factory_registered": true,
-    "factory_datetime": "2024-05-09 18:12:12"
-  },
-  "config": {
-    "test_mode": "TEST_MODE_NONE",
-    "datetime": {
-      "save": true,
-      "sync_to_unixtime": 1719314785,
-      "timezone": "CET-1CEST,M3.5.0,M10.5.0/3",
-      "sync_with_sntp": true,
-      "sntp_server": "pool.ntp.org",
-      "unixtime": 1719317151,
-      "datetime": "2024-06-25 14:05:51"
+  "command": "init-success",
+  "data": {
+    "device": {
+      "device_id": 114,
+      "serial_number": "0450-D0B7-7017-DC22",
+      "model": "ST-INE-003-002",
+      "name": "Visualfy Bridge",
+      "token": "1c62ef10f4a492b8638c5169359b54aa95984296c2b2149cb7b18441d1352fab",
+      "atecc_serial_str": "",
+      "firmware_version": "1.0.4",
+      "idf_version": "v5.2.2-185-g018409d99b",
+      "idf_datetime": "",
+      "api_version": 1,
+      "chip_id": 1,
+      "chip_features": 50,
+      "chip_revision": 301,
+      "chip_cores": 2,
+      "factory_registered": true,
+      "factory_datetime": "2024-05-09 18:12:12"
     },
-    "location": {
-      "save": false,
-      "category_id": 0,
-      "group_id": 0,
-      "family_id": 0,
-      "location_id": 0,
-      "gps_position": {
-        "error": false,
-        "latitude": 0,
-        "longitude": 0,
-        "altitude": 0
+    "config": {
+      "test_mode": "TEST_MODE_NONE",
+      "datetime": {
+        "save": true,
+        "sync_to_unixtime": 1719314785,
+        "timezone": "CET-1CEST,M3.5.0,M10.5.0/3",
+        "sync_with_sntp": true,
+        "sntp_server": "pool.ntp.org",
+        "unixtime": 1719317151,
+        "datetime": "2024-06-25 14:05:51"
+      },
+      "location": {
+        "save": false,
+        "category_id": 0,
+        "group_id": 0,
+        "family_id": 0,
+        "location_id": 0,
+        "gps_position": {
+          "error": false,
+          "latitude": 0,
+          "longitude": 0,
+          "altitude": 0
+        }
+      },
+      "network": {
+        "save": true,
+        "ping_interval": 15000,
+        "ping_threshold": 3,
+        "wifi_ap_ssid": "BridgeAP",
+        "wifi_ap_pass": "password",
+        "wifi_ap_authmode": 6,
+        "wifi_ap_channel": 11,
+        "wifi_sta_ssid": "TP-Link_C49C",
+        "wifi_sta_pass": "8165044699",
+        "wifi_sta_authmode": 6,
+        "wifi_sta_channel": 11,
+        "mesh_id": "999999",
+        "mesh_pass": "password",
+        "mesh_authmode": 6,
+        "mesh_channel": 11,
+        "mesh_channel_switch": 0,
+        "mesh_router_switch": 0,
+        "mesh_root_type": 1,
+        "mesh_node_type": 2
+      },
+      "intervals_bridge": {
+        "save": true,
+        "read": 5000,
+        "store": 60000,
+        "send": 5000
+      },
+      "intervals_node": {
+        "save": true,
+        "read": 5000,
+        "store": 60000,
+        "send": 30000
+      },
+      "server": {
+        "https_active": false,
+        "task_stack_size": 24576,
+        "task_priority": 18,
+        "task_core_id": 1,
+        "recv_wait_timeout": 2000,
+        "send_wait_timeout": 2000
       }
     },
-    "network": {
-      "save": true,
-      "ping_interval": 15000,
-      "ping_threshold": 3,
-      "wifi_ap_ssid": "BridgeAP",
-      "wifi_ap_pass": "password",
-      "wifi_ap_authmode": 6,
-      "wifi_ap_channel": 11,
-      "wifi_sta_ssid": "TP-Link_C49C",
-      "wifi_sta_pass": "8165044699",
-      "wifi_sta_authmode": 6,
-      "wifi_sta_channel": 11,
-      "mesh_id": "999999",
-      "mesh_pass": "password",
-      "mesh_authmode": 6,
-      "mesh_channel": 11,
-      "mesh_channel_switch": 0,
-      "mesh_router_switch": 0,
-      "mesh_root_type": 1,
-      "mesh_node_type": 2
-    },
-    "intervals_bridge": {
-      "save": true,
-      "read": 5000,
-      "store": 60000,
-      "send": 5000
-    },
-    "intervals_node": {
-      "save": true,
-      "read": 5000,
-      "store": 60000,
-      "send": 30000
-    },
-    "server": {
-      "https_active": false,
-      "task_stack_size": 24576,
-      "task_priority": 18,
-      "task_core_id": 1,
-      "recv_wait_timeout": 2000,
-      "send_wait_timeout": 2000
+    "state": {
+      "current_millis": 0,
+      "last_millis": 0,
+      "unixtime": 0,
+      "unixtime_synced": false,
+      "is_gpio_init": true,
+      "is_i2c_init": false,
+      "is_spi_init": false,
+      "is_nvs_init": true,
+      "is_lfs_pub_init": true,
+      "is_lfs_prv_init": true,
+      "is_tcpip_init": true,
+      "is_netbios_init": true,
+      "is_mdns_init": true,
+      "is_sntp_init": true,
+      "is_ws_started": true,
+      "is_ws_https": false,
+      "eth_init": true,
+      "eth_connected": true,
+      "eth_clients": 0,
+      "eth_mac": "30:c9:22:9b:c7:e3",
+      "eth_state": 0,
+      "eth_has_internet": false,
+      "wifi_sta_init": true,
+      "wifi_sta_connected": false,
+      "wifi_sta_retry_num": 0,
+      "wifi_sta_clients": 0,
+      "wifi_sta_mac": "30:c9:22:9b:c7:e0",
+      "wifi_sta_state": 0,
+      "wifi_ap_init": false,
+      "wifi_ap_connected": false,
+      "wifi_ap_countdown": 0,
+      "wifi_ap_clients": 0,
+      "wifi_ap_mac": "30:c9:22:9b:c7:e1",
+      "wifi_ap_state": 0,
+      "bt_mac": "30:c9:22:9b:c7:e2"
     }
-  },
-  "state": {
-    "current_millis": 0,
-    "last_millis": 0,
-    "unixtime": 0,
-    "unixtime_synced": false,
-    "is_gpio_init": true,
-    "is_i2c_init": false,
-    "is_spi_init": false,
-    "is_nvs_init": true,
-    "is_lfs_pub_init": true,
-    "is_lfs_prv_init": true,
-    "is_tcpip_init": true,
-    "is_netbios_init": true,
-    "is_mdns_init": true,
-    "is_sntp_init": true,
-    "is_ws_started": true,
-    "is_ws_https": false,
-    "eth_init": true,
-    "eth_connected": true,
-    "eth_clients": 0,
-    "eth_mac": "30:c9:22:9b:c7:e3",
-    "eth_state": 0,
-    "eth_has_internet": false,
-    "wifi_sta_init": true,
-    "wifi_sta_connected": false,
-    "wifi_sta_retry_num": 0,
-    "wifi_sta_clients": 0,
-    "wifi_sta_mac": "30:c9:22:9b:c7:e0",
-    "wifi_sta_state": 0,
-    "wifi_ap_init": false,
-    "wifi_ap_connected": false,
-    "wifi_ap_countdown": 0,
-    "wifi_ap_clients": 0,
-    "wifi_ap_mac": "30:c9:22:9b:c7:e1",
-    "wifi_ap_state": 0,
-    "bt_mac": "30:c9:22:9b:c7:e2"
   }
 }
-}
+
 ```
 ## data 
 
