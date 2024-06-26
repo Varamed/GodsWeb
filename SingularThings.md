@@ -247,9 +247,6 @@ El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos act
 }
 }
 ```
-## command
-acción realizada.
-
 ## data
 Datos de todos los nodos visibles
   
@@ -897,6 +894,7 @@ El comando `get-node` se utiliza para obtener información detallada sobre un no
 }
 ```
 ## data
+
 ### mac_address
 Es la dirección MAC del dispositivo.
 
@@ -1689,8 +1687,10 @@ El comando `set-network` tiene como objetivo actualizar la configuración de red
 
 ```
 **Ejemplo de respuesta JSON**
-```json 
+```json
 {
+  "command": "set-network",
+  "data": {
   "save": true,
   "ping_interval": true,
   "ping_threshold": true,
@@ -1711,6 +1711,7 @@ El comando `set-network` tiene como objetivo actualizar la configuración de red
   "mesh_max_capacity": true,
   "mesh_max_connection": true,
   "mesh_max_layer": true
+}
 }
 ```
 ### data
