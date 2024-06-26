@@ -1032,7 +1032,7 @@ El comando `get-node` se utiliza para obtener información detallada sobre un no
 {
   "command": "get-node",
   "data": {
-    "mac_address": ""
+    "mac_address": "40:4c:ca:45:1e:08"
   }
 }
 ```
@@ -1682,66 +1682,67 @@ El comando `set-network` tiene como objetivo actualizar la configuración de red
 {
   "command": "set-network",
   "data": {
-  "save": true,
-  "ping_interval": true,
-  "ping_threshold": true,
-  "wifi_ap_ssid": true,
-  "wifi_ap_pass": true,
-  "wifi_ap_authmode": true,
-  "wifi_ap_channel": true,
-  "wifi_sta_ssid": true,
-  "wifi_sta_pass": true,
-  "wifi_sta_authmode": true,
-  "wifi_sta_channel": true,
-  "mesh_id": true,
-  "mesh_pass": true,
-  "mesh_authmode": true,
-  "mesh_channel": true,
-  "mesh_channel_switch": true,
-  "mesh_backoff_rssi": true,
-  "mesh_max_capacity": true,
-  "mesh_max_connection": true,
-  "mesh_max_layer": true
+    "save": true,
+    "ping_interval": true,
+    "ping_threshold": true,
+    "wifi_ap_ssid": true,
+    "wifi_ap_pass": true,
+    "wifi_ap_authmode": true,
+    "wifi_ap_channel": true,
+    "wifi_sta_ssid": true,
+    "wifi_sta_pass": true,
+    "wifi_sta_authmode": true,
+    "wifi_sta_channel": true,
+    "mesh_id": true,
+    "mesh_pass": true,
+    "mesh_authmode": true,
+    "mesh_channel": true,
+    "mesh_channel_switch": true,
+    "mesh_backoff_rssi": true,
+    "mesh_max_capacity": true,
+    "mesh_max_connection": true,
+    "mesh_max_layer": true
+  }
 }
-}
+
 ```
 ### data
-- save: Indica si se debe guardar la configuración actualizada.
+- save: Indica si se debe guardar la configuración actualizada. (Booleano)
   
-- ping_interval: Intervalo de tiempo en segundos entre los pings de mantenimiento de red.
+- ping_interval: Intervalo de tiempo en segundos entre los pings de mantenimiento de red. (Entre 1 y 255)
   
-- ping_threshold: Umbral mínimo de ping para considerar que la conexión está estable.
+- ping_threshold: Umbral mínimo de ping para considerar que la conexión está estable. (Entre 1 y 65,535)
 
-- wifi_ap_ssid: Nombre del SSID para el punto de acceso Wi-Fi.
+- wifi_ap_ssid: Nombre del SSID para el punto de acceso Wi-Fi. (el tamaño del buffer definido)
 
-- wifi_ap_pass: Contraseña del punto de acceso Wi-Fi.
+- wifi_ap_pass: Contraseña del punto de acceso Wi-Fi. (el tamaño del buffer definido)
 
-- wifi_ap_authmode: Modo de autenticación del punto de acceso Wi-Fi.
+- wifi_ap_authmode: Modo de autenticación del punto de acceso Wi-Fi. (Int de 0 a 3)
 
-- wifi_ap_channel: Canal de transmisión del punto de acceso Wi-Fi.
+- wifi_ap_channel: Canal de transmisión del punto de acceso Wi-Fi. (Número entero entre 1 y 13)
 
-- wifi_sta_ssid: Nombre del SSID para la estación Wi-Fi (cliente).
+- wifi_sta_ssid: Nombre del SSID para la estación Wi-Fi (cliente). (el tamaño del buffer definido)
 
-- wifi_sta_pass: Contraseña para la conexión como estación Wi-Fi.
+- wifi_sta_pass: Contraseña para la conexión como estación Wi-Fi. (el tamaño del buffer definido)
 
-- wifi_sta_authmode: Modo de autenticación para la conexión como estación Wi-Fi.
+- wifi_sta_authmode: Modo de autenticación para la conexión como estación Wi-Fi. (Int de 0 a 3)
 
-- wifi_sta_channel: Canal de transmisión para la conexión como estación Wi-Fi.
+- wifi_sta_channel: Canal de transmisión para la conexión como estación Wi-Fi. (Número entero entre 1 y 13)
 
-- mesh_id: Identificador único para la red mesh.
+- mesh_id: Identificador único para la red mesh. (6 caracteres)
 
-- mesh_pass: Contraseña para la red mesh.
+- mesh_pass: Contraseña para la red mesh. (el tamaño del buffer definido)
 
-- mesh_authmode: Modo de autenticación para la red mesh.
+- mesh_authmode: Modo de autenticación para la red mesh. (Int de 0 a 3)
 
-- mesh_channel: Canal de transmisión para la red mesh.
+- mesh_channel: Canal de transmisión para la red mesh. (Int de 1 a 11)
 
-- mesh_channel_switch: Configuración de cambio de canal para la red mesh.
+- mesh_channel_switch: Configuración de cambio de canal para la red mesh. (Int de 1 a 11)
 
 - mesh_backoff_rssi: Valor de RSSI de retroceso para la red mesh.
 
-- mesh_max_capacity: Capacidad máxima de la red mesh.
+- mesh_max_capacity: Capacidad máxima de la red mesh. (Int de 1 a 1000)
 
-- mesh_max_connection: Número máximo de conexiones simultáneas en la red mesh.
+- mesh_max_connection: Número máximo de conexiones simultáneas en la red mesh. (Int mayor que 1 y menor o igual a 10) 
 
-- mesh_max_layer: Número máximo de capas en la red mesh.
+- mesh_max_layer: Número máximo de capas en la red mesh. (Int de 1 a 1000)
