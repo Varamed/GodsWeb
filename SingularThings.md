@@ -14,15 +14,16 @@ Este documento ofrece un resumen de la configuración y la estructura de estado 
 El comando `get-nodes` se utiliza para solicitar la lista de todos los nodos actualmente alimentados en la red. Este comando es esencial para los administradores de red para obtener una visión general de los dispositivos activos y sus estados. Cuando se envía este comando, el servidor responde con detalles sobre cada nodo alimentado, incluyendo su configuración y estado actual.
 
 **command y data**
-```javascript
-var cmd_get_nodes = {
-    command: 'get-nodes',
-    data: {}
-  }
+```json
+{
+  "command": "get-nodes",
+  "data": {}
+}
 ```
 **Ejemplo de respuesta JSON**
 ```json
-[
+{
+ "node_data":[
 {
   "config": {
     "datetime": {
@@ -234,14 +235,21 @@ var cmd_get_nodes = {
     "unixtime": 94173
   }
 }
-]
+],
+"node_data_size": 2,
+"node_list": [
+    "40:4c:ca:45:1e:08",
+    "40:4c:ca:4b:35:a4"
+  ]
+"node_list_size": 3
+}
 ```
 
-
-### config
+### node_data
+#### config
 configuración general del dispositivo
 
-#### DateTime
+##### DateTime
 Configuración relacionada con la fecha y hora del dispositivo.
 
 - save: Indica si se guarda la configuración.
@@ -256,7 +264,7 @@ Configuración relacionada con la fecha y hora del dispositivo.
 
 - updated: Indica si la configuración ha sido actualizada.
 
-#### Intervals
+##### Intervals
 Configuración de intervalos de tiempo para operaciones periódicas.
 
 - read: Intervalo de lectura de datos.
@@ -269,7 +277,7 @@ Configuración de intervalos de tiempo para operaciones periódicas.
 
 - updated: Indica si la configuración de intervalos ha sido actualizada.
 
-#### Light
+##### Light
 Configuración de la luz o iluminación.
 
 - blink_color: Configuración del parpadeo de color.
@@ -310,14 +318,14 @@ Configuración de la luz o iluminación.
 
 - updated: Indica si la configuración de luz ha sido actualizada.
 
-#### Location
+##### Location
 Configuración de la ubicación.
 
 - category_id: ID de la categoría de ubicación.
 
 - family_id: ID de la familia de ubicación.
 
-##### gps_position
+###### gps_position
 Posición GPS.
 
 - altitude: Altitud GPS.
@@ -339,7 +347,7 @@ Posición GPS.
 - updated: Indica si la configuración de ubicación ha sido actualizada.
 
 
-#### Network
+##### Network
 Configuración de red.
 
 - mesh_authmode: Modo de autenticación de malla.
@@ -348,7 +356,7 @@ Configuración de red.
 
 - mesh_channel_switch: Interruptor de cambio de canal de malla.
 
-#### mesh_config
+##### mesh_config
 Valores detallados en la configuración de malla
 
  - assoc_expire_ms: Tiempo de expiración de asociación.
@@ -445,7 +453,7 @@ Valores detallados en la configuración de malla
 
 - version: Versión de la configuración de red.
 
-### Device
+#### Device
 La sección de Device proporciona información sobre el hardware y software del dispositivo.
 
 - api_version: Versión de la API.
@@ -483,10 +491,10 @@ La sección de Device proporciona información sobre el hardware y software del 
 - mac_address: Dirección MAC del dispositivo.
 
 
-### State
+#### State
 La sección de State proporciona información en tiempo real sobre el estado operativo del dispositivo, incluido el estado de la red y las lecturas de sensores.
 
-#### Mesh
+##### Mesh
 
 - mesh_childs: Número de hijos en la malla.
 
@@ -506,9 +514,9 @@ La sección de State proporciona información en tiempo real sobre el estado ope
 
 - root_addr: Dirección de la raíz.
 
-#### Sensors
+##### Sensors
 
-##### accel
+###### accel
 Datos del acelerómetro.
 
 - error: Indicador de error.
@@ -519,7 +527,7 @@ Datos del acelerómetro.
     
 - z: Valor del eje Z.
 
-##### ambient
+###### ambient
 Datos del sensor ambiental.
 
 - air_quality: Calidad del aire.
@@ -534,7 +542,7 @@ Datos del sensor ambiental.
     
 - temperature: Temperatura.
 
-##### battery
+###### battery
 Estado de la batería.
 
 - adc_imon: Monitoreo actual del ADC.
@@ -565,7 +573,7 @@ Estado de la batería.
 
 - voltage_per_cell: Voltaje por celda.
 
-##### compass
+###### compass
 Datos del sensor de brújula.
 
 - error: Indicador de error.
@@ -576,7 +584,7 @@ Datos del sensor de brújula.
 
 - z: Valor del eje Z.
 
-##### gps
+###### gps
 Datos del GPS.
     
 -altitude: Altitud.
@@ -587,7 +595,7 @@ Datos del GPS.
 
 -longitude: Longitud.
 
-##### gyros
+###### gyros
 Datos del giroscopio.
     
 - error: Indicador de error.
@@ -598,7 +606,7 @@ Datos del giroscopio.
 
 - z: Valor del eje Z.
 
-##### lux_color
+###### lux_color
 Datos del sensor de color de luz.
     
 - b: Componente azul.
@@ -611,7 +619,7 @@ Datos del sensor de color de luz.
 
 - w: Componente blanco.
 
-##### noise
+###### noise
 Datos del sensor de ruido.
     
 - db: Nivel de ruido en decibelios.
@@ -634,17 +642,28 @@ Datos del sensor de ruido.
 
 - unixtime: Tiempo Unix.
 
+### node_data_size
+Es un número que indica la cantidad de elementos en node_data
+
+### node_list
+contiene una lista de direcciones MAC que identifican los nodos.
+
+### node_list_size
+Es un número que indica la cantidad de elementos en node_list (contando el bridge).
+
+
+
 ## get-node
 El comando `get-node` se utiliza para obtener información detallada sobre un nodo específico en la red mediante su dirección MAC única. Este comando es fundamental para recopilar datos exhaustivos sobre un dispositivo IoT particular, incluyendo detalles como el ID del dispositivo, número de serie (si está disponible), configuración de red específica, estado operativo actual (como su capa en una red de malla), y otros parámetros relevantes.
 
 **command y data**
-```javascript
-var cmd_get_node = {
-    command: 'get-node',
-    data: {
-      mac_address: ''
-    }
+```json
+{
+  "command": "get-node",
+  "data": {
+    "mac_address": ""
   }
+}
 ```
 **Ejemplo de respuesta JSON**
 ```json
@@ -1257,14 +1276,14 @@ Datos recogidos por varios sensores del dispositivo.
 `init` es el primer comando o mensaje enviado por un cliente WebSocket para iniciar la conexión con un servidor WebSocket, facilitando así la comunicación bidireccional en tiempo real entre ambos extremos.
 
 **command y data**
-```javascript
-var cmd_init = {
-    command: 'init',
-    data: {
-      protocol: 1,
-      security_token: ''
-    }
+```json
+{
+  "command": "init",
+  "data": {
+    "protocol": 1,
+    "security_token": ""
   }
+}
 ```
 **Ejemplo de respuesta JSON**
 ```json
@@ -1618,34 +1637,33 @@ var cmd_init = {
 El comando `set-network` tiene como objetivo actualizar la configuración de red. La función valida y procesa cada campo de configuración individualmente, actualizando la configuración interna si los datos son válidos. El JSON devuelto consistirá en booleanos que indican si cada valor ha sido modificado dentro de la configuración.
 
 **command y data**
-```javascript
- var cmd_set_network = {
-    
-      command: 'set-network',
-      data: {
-          save: true,
-          ping_interval: 30,
-          ping_threshold: 5,
-          wifi_ap_ssid: "MySSID",
-          wifi_ap_pass: "MyPassword",
-          wifi_ap_authmode: 3,
-          wifi_ap_channel: 6,
-          wifi_sta_ssid: "MySSID",
-          wifi_sta_pass: "MyPassword",
-          wifi_sta_authmode: 3,
-          wifi_sta_channel: 11,
-          mesh_id: "123456",
-          mesh_pass: "MeshPassword",
-          mesh_authmode: 3,
-          mesh_channel: 1,
-          mesh_channel_switch: 3,
-          mesh_backoff_rssi: -80,
-          mesh_max_capacity: 10,
-          mesh_max_connection: 5,
-          mesh_max_layer: 3
-      }
-  
+```json
+{
+  "command": "set-network",
+  "data": {
+    "save": true,
+    "ping_interval": 30,
+    "ping_threshold": 5,
+    "wifi_ap_ssid": "MySSID",
+    "wifi_ap_pass": "MyPassword",
+    "wifi_ap_authmode": 3,
+    "wifi_ap_channel": 6,
+    "wifi_sta_ssid": "MySSID",
+    "wifi_sta_pass": "MyPassword",
+    "wifi_sta_authmode": 3,
+    "wifi_sta_channel": 11,
+    "mesh_id": "123456",
+    "mesh_pass": "MeshPassword",
+    "mesh_authmode": 3,
+    "mesh_channel": 1,
+    "mesh_channel_switch": 3,
+    "mesh_backoff_rssi": -80,
+    "mesh_max_capacity": 10,
+    "mesh_max_connection": 5,
+    "mesh_max_layer": 3
   }
+}
+
 ```
 **Ejemplo de respuesta JSON**
 ```json 
